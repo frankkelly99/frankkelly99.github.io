@@ -1,0 +1,659 @@
+<html>
+<head>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .openBtn {
+        display: flex;
+        justify-content: left;
+      }
+      .openButton {
+        border: none;
+        border-radius: 5px;
+        background-color: #1c87c9;
+        color: white;
+        padding: 14px 20px;
+        cursor: pointer;
+        position: fixed;
+      }
+      .loginPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      .formPopup {
+        display: none;
+        position: absolute;
+       left: 35%;
+        top: 5%; 
+        /*transform: translate(-50%, 5%);*/
+        border: 3px solid #999999;
+        z-index: 9;
+
+      }
+      .formContainer {
+        max-width: 600px;
+        padding: 10px;
+        background-color: #fff;
+				overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+      }
+      .formContainer input[type=text],
+      .formContainer input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 10px 0;
+        border: none;
+        background: #eee;
+      }
+      .formContainer input[type=text]:focus,
+      .formContainer input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+      .formContainer .cancel {
+        background-color: #cc0000;
+      }
+      .formContainer .btn:hover,
+      .openButton:hover {
+        opacity: 1;
+      }
+	  #mydivheader {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196F3;
+  color: #fff;
+}
+    </style>
+<style>
+body { height: auto;
+
+}
+div {height: auto}
+
+.collapsible {
+  background-color: #777;
+  color: pink;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: auto;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+.formbutton {
+	background-color: green;
+	color:	white;
+	height: 40px;
+	width:	80px;
+	margin: 2px;
+}
+</style>
+<style>
+
+.draggable-contact-form {
+  /* width: 600px;
+  height: 360px;
+  background: #fff;
+  box-shadow: 0 8px 42px -11px rgba(0, 0, 0, 0.2);
+  font-family: "Roboto", sans-serif;
+  border-radius: 10px;
+  position: absolute;
+  right: 40px;
+  bottom: 130px; */
+  pointer-events: none;
+}
+
+.draggable-contact-form.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.draggable-contact-form .drag-icon {
+  background: #82b8ff;
+  padding: 8px 24px;
+  border-radius: 10px;
+  display: flex;
+}
+
+.draggable-contact-form form {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 15px;
+}
+
+.draggable-contact-form form .form-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.draggable-contact-form form input[type="text"],
+.draggable-contact-form form textarea {
+  font-size: 16px;
+  background: #efefef;
+  border: none;
+  padding: 8px 24px;
+  font-family: "Roboto", sans-serif;
+}
+
+.draggable-contact-form form textarea {
+  resize: none;
+}
+
+.draggable-contact-form form .send-btn {
+  background: #0691df;
+  border: none;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 12px;
+  color: #fff;
+  text-transform: uppercase;
+  border-radius: 10px;
+  margin: 0 -16px -16px -16px;
+  cursor: pointer;
+}	
+</style>
+</head>
+<body id="myBody">
+
+<!--<input type="file" onchange="previewFile()">-->
+<p class="content"></p>
+<div>THIS IS NOTHING</div>
+<div id="demoA">AAA</div> 
+<div id="demoB">BB BBB BBB</div> 
+<div id="demo0" class="arr">TYPE OF</div>
+<div id="demo1">ZZZ</div> 
+<div id="demo2">from Inside</div> 
+
+
+<h1>COLLAPSE WORLD</h1>
+<p id="pp1">put id here</p>
+<p id="pp2">put height here</p>
+<p id="pp3">put div height here</p>
+<p id="pp4">topics?</p>
+<p>A Collapsible:</p>
+<button class="collapsible">Open Collapsible</button>
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+</div>
+
+<!-- ############################## draggable-contact-form-->
+<!-- <div class="loginPopup">-->
+    <div class="formPopup draggable-contact-form" id="popupFormLP">
+		<div class="drag-icon">
+        <svg
+          width="17"
+          height="17"
+          viewBox="0 0 17 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M16.9428 8.37994L14.2316 6.2402C14.2089 6.22235 14.1816 6.21126 14.1529 6.20819C14.1242 6.20512 14.0952 6.21019 14.0693 6.22284C14.0434 6.23548 14.0215 6.25517 14.0062 6.27966C13.991 6.30415 13.9829 6.33245 13.983 6.36131V7.7361H9.26584V3.0189H10.6427C10.7702 3.0189 10.8425 2.87016 10.7638 2.77029L8.62202 0.0589556C8.60784 0.0406083 8.58965 0.0257542 8.56884 0.0155341C8.54803 0.00531407 8.52515 0 8.50196 0C8.47878 0 8.4559 0.00531407 8.43509 0.0155341C8.41428 0.0257542 8.39609 0.0406083 8.38191 0.0589556L6.24008 2.77029C6.22224 2.79297 6.21115 2.82023 6.20807 2.84892C6.205 2.87762 6.21008 2.90661 6.22272 2.93255C6.23536 2.9585 6.25506 2.98036 6.27955 2.99563C6.30404 3.0109 6.33234 3.01897 6.3612 3.0189H7.73596V7.7361H3.01884V6.35919C3.01884 6.2317 2.8701 6.15945 2.77024 6.23807L0.0589545 8.37994C0.0406075 8.39412 0.0257537 8.41231 0.0155339 8.43312C0.00531397 8.45393 0 8.47681 0 8.5C0 8.52318 0.00531397 8.54606 0.0155339 8.56687C0.0257537 8.58768 0.0406075 8.60587 0.0589545 8.62005L2.76811 10.7619C2.86798 10.8405 3.01672 10.7704 3.01672 10.6408V9.26601H7.73384V13.9832H6.35695C6.22946 13.9832 6.15721 14.132 6.23583 14.2318L8.37766 16.941C8.43928 17.0197 8.55827 17.0197 8.61777 16.941L10.7596 14.2318C10.8382 14.132 10.7681 13.9832 10.6385 13.9832H9.26584V9.26601H13.983V10.6429C13.983 10.7704 14.1317 10.8427 14.2316 10.764L16.9407 8.62218C16.959 8.6078 16.9738 8.5895 16.9841 8.56862C16.9944 8.54775 16.9998 8.52483 17 8.50157C17.0002 8.47831 16.9952 8.4553 16.9853 8.43424C16.9754 8.41319 16.9609 8.39463 16.9428 8.37994V8.37994Z"
+            fill="black"
+          />
+        </svg>
+      </div>
+		<!--<div id="myHeader">Click here to move</div>Add few elements to the form-->
+        <form id="f1" action="" class="formContainer">
+		  <h2>CREATE LESSON PLAN</h2>
+          <label for="Day">
+            <strong>DAY NUM</strong>
+          </label>
+        <div>
+            <input type="text" id="Day" placeholder="Enter DOY" />
+        </div>
+          <label for="Title">
+            <strong>LESSON TITLE</strong>
+          </label>
+        <div>
+            <input type="text" id="Title" placeholder="Enter Title" />
+        </div>
+		<label for="OV">
+            <strong>LESSON OVERVIEW</strong>
+        </label>
+        <div>
+            <!--<textarea id="OV" form="f1" placeholder="Enter Overview" />			-->	
+			<input type="text" id="OV" placeholder="Enter Overview" />
+        </div>
+          <label for="Goals">
+            <strong>LESSON Goals</strong>
+          </label>
+        <div>
+            <input type="text" id="Goals" placeholder="Enter goals" />
+        </div>
+		<!--
+          <label for="WU">
+            <strong>LESSON Warm UP</strong>
+          </label>
+        <div>
+            <input type="text" id="WU" placeholder="Enter Warm Up" />
+        </div>
+          <label for="Details">
+            <strong>LESSON Details</strong>
+          </label>
+        <div>
+            <input type="text" id="Details" placeholder="Enter Details" />
+        </div>
+		-->
+        <!--Add to button to save the data.     -->
+        <div>
+            <input type="file" id="upLoad" class="btn"  accept=".html"  onchange="previewFile()" />
+		
+            <input type="button" id="btn" class="btn" value="Save data to file" onclick="saveFile()" />
+			<button type="button" class="btn cancel" onclick="closeForm('popupFormLP')">Close</button>
+        </div>
+		</form>
+    </div>
+<!-- </div>-->
+
+<!-- ##############################-->
+<script>
+//
+let Topics = {"myIntro":"AP CSP @ JHS",
+			"Unit0":"GETTING STARTING",
+			"Unit1":"INTERNET & WWW",
+			"Unit2":"PROGRAMMING with C",
+			"Unit3":"PROGRAMMING with PYTHON",
+			"Unit4":"DATA SCIENCE",
+			"Unit5":"SQL",
+			"Unit6":"More Python",
+			"Unit7":"WRAPPING UP,PROJECTS,REVIEW,EXAMS",
+			"Week0":"Hello",
+			"Week1":"Overview & Expectations",
+			"Week2":"Scratch",
+			"Week3":"A Brief Look at the INTERNET & WWW",
+			"Week4":"TBD",
+			"Week5":"TBD",
+			"Week6":"TBD",	
+			"Day0":"TBD",
+			"Day1":"TBD",
+			"Week":"TBD",
+			"Day":"TBD"			
+}
+document.getElementById("pp4").innerHTML = Object.keys(Topics);
+//
+//
+function makeElements(type,unit_num,week_num,doy,myInfo) {
+
+//alert("Calling ME");
+
+let ElementID = ""
+let ParentID = ""
+let TopicID = ""
+
+	if (type == "intro"){
+		ElementID = "myIntro"
+		ParentID = "myBody"
+		TopicID = ElementID
+	} else if (type == "unit") {
+		ElementID = "Unit" + unit_num.toString()
+		ParentID = "myBody"
+		TopicID = ElementID
+	} else if (type == "week") {
+		ElementID = "Week" + week_num.toString()
+		ParentID = "Unit" + unit_num.toString() + "_content"
+		TopicID = ElementID		
+	} else {
+		ElementID = "Day" + doy.toString()		//day
+		ParentID = "Week" + week_num.toString() + "_content"
+		//ParentID = "Unit" + unit_num.toString()	+ "_content"
+
+		if (!Topics.hasOwnProperty(ElementID)) {
+			Topics[ElementID] = "Today's BIG Lesson"
+			TopicID = ElementID
+					//TopicID = "Day"
+			//createLesson(ElementID)
+		} else {
+			TopicID = "Day"
+			//editLesson(ElementID)
+		}
+		
+	}
+	
+	const myElement = document.createElement("button");
+	myElement.setAttribute("id",ElementID);	
+	myElement.setAttribute("class","collapsible");
+	document.getElementById(ParentID).appendChild(myElement);
+	// Complete the Button Displayed Text
+	let Topic = Topics[TopicID]
+	document.getElementById(ElementID).innerHTML = "  " + ElementID + " " + Topic;
+	
+	const myContent = document.createElement("div");
+	let contentID = ElementID + "_content"
+	myContent.setAttribute("id",contentID);	
+	myContent.setAttribute("class","content");
+	document.getElementById(ParentID).appendChild(myContent);
+//
+	if (type == "day"){
+		//alert(ElementID)
+		let dd = ElementID.substring(3, 6);
+		//alert(typeof dd)  .formPopup
+		myElement.setAttribute("class","collapsible");
+		myElement.setAttribute("onclick","openForm(this.id)");
+		//
+		//let inputF = document.getElementById("Day");
+		//inputF.value = ElementID.substring(3,6);
+	}
+
+	let paraID = ElementID + "_para"
+	const myPara = document.createElement("p");
+	myPara.setAttribute("id",paraID);	
+	document.getElementById(contentID).appendChild(myPara);
+	
+	document.getElementById(paraID).innerHTML = myInfo;	
+}
+//makeElements("intro",0,1,241,"something interesting to say");
+//makeElements("unit", 0,0,0,"something more interesting to say");
+
+//makeElements("unit", 0,0,0,"");
+//makeElements("week", 0,1,0,"");	
+//makeElements("day",  1,1,255,"something more interesting to say");
+//makeElements("day",  1,1,256,"something more interesting to say");		
+//makeElements("week", 1,2,0,"");	
+//makeElements("day",  1,2,262,"something more interesting to say");	
+//makeElements("unit", 2,0,0,"");
+/*
+
+
+// 08/28/2022 to 01/13/2023
+// unit 0 (intro) : 2 	08/28
+// unit 1 (web): 1 		09/11
+// unit 2 (c): 3 		09/18
+// unit 3 (py): 4		10/09
+// unit 4 Data : 3		11/06
+// unit 5 SQL : 1		11/27
+// unit 6 more py : 4	12/04
+// unit 7 review/EOC: 2	01/01
+*/
+//const unit_weeks = {0:2,1:1,2:3,3:4,4:3,5:1,6:4,7:2}
+const unit_weeks = [2,1,3,4,3,1,4,2]
+const total_weeks = 20 //including Xmas break
+let sw = 0 //start week 08/28/2022
+let week_counter = 0;
+
+
+for (let un = 0; un < 8; un++){
+//	alert(un);
+	makeElements("unit", un,0,0,"");
+//  makeElements("unit", 1, 0,0,"");
+	
+		for (let wn = sw;wn < sw + (unit_weeks[un]); wn++) {
+			week_counter = wn;
+			makeElements("week", un,wn,0,"");
+			
+			for (let dx = 0; dx < 7; dx++) {
+				let doyS = (wn * 7 + dx).toString();
+				makeElements("day",un,wn,doyS,"something more interesting to say");
+				//myElement.setAttribute("class","collapsible");
+			}
+
+			
+			//}
+			//alert(week_counter);
+			//sw = unit_weeks[un] - 1;
+			//sw = week_counter;
+		}
+		sw = week_counter + 1;
+}
+			
+//	
+//
+//
+//
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	let tempID = coll[i].getAttribute("id");
+	document.getElementById("pp1").innerHTML = tempID;
+	document.getElementById("pp2").innerHTML = coll[i].scrollHeight;
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+	  let myDivHeight = document.getElementById(tempID + "_content").scrollHeight;
+	  document.getElementById("pp3").innerHTML = myDivHeight;
+      content2.style.maxHeight = content2.scrollHeight + myDivHeight + "px";
+    } 
+  });
+}
+//
+function openForm(dayID) {
+	alert(typeof dayID)
+	let inputF = document.getElementById("Day");
+	inputF.value = dayID.substring(3,6);
+	
+    document.getElementById("popupFormLP").style.display = "block";
+    //document.getElementById(clickedButton).style.display = "block";
+}
+function closeForm(clickedButton) {
+    //document.getElementById("popupFormLP").style.display = "none";
+    document.getElementById(clickedButton).style.display = "none";
+}
+
+</script>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+		const day_num = document.getElementById("Day");
+    	const title = document.getElementById("Title");
+        const ov = document.getElementById("OV");
+        const goals = document.getElementById("Goals");
+        //const lectTopic = document.getElementById('txtTopic');
+        //const lecture = document.getElementById('msg');
+        //const assessment = document.getElementById('txtAssess');
+        //const assignment = document.getElementById('txtAssign');
+
+        
+        // This variable stores all the data.
+        let data = 
+			'<html> \r\n ' +
+			'<head> \r\n ' +
+			'<style> \r\n ' +
+			'body {background-color: yellow} \r\n ' +
+			'li {color: red} \r\n ' +
+			'</style> \r\n ' +	
+			'</head> \r\n ' +			
+			'<body> \r\n ' +
+			'<ul> \r\n ' +
+			'<li id="liDOY"> DOY: ' + day_num.value + '</li> \r\n ' + 
+            '<li id="liTitle"> Title: ' + title.value + '</li> \r\n ' + 
+            '<li id="liOV"> Overview: ' + ov.value + '</li> \r\n ' + 
+            '<li id="liGoals"> Goals: ' + goals.value + '</li> \r\n ' + 
+            //'<li id="liDOY">Topic: ' + lectTopic.value + '</li> \r\n ' + 
+            //'<li id="liDOY">Lecture: ' + lecture.value + '</li> \r\n' +
+			'</ul>  \r\n ' +
+			'</body> \r\n ' +	
+			'</html>';
+			
+/*            
+        // This variable stores all the data.
+        let data = 
+			'<html> \r\n ' +
+			'<head> \r\n ' +
+			'<style> \r\n ' +
+			'body {background-color: yellow} \r\n ' +
+			'li {color: red} \r\n ' +
+			'</style> \r\n ' +	
+			'</head> \r\n ' +			
+			'<body> \r\n ' +
+			'<ul> \r\n ' +
+			'<li> DOY: ' + day_num.value + '</li> \r\n ' + 
+            '<li> Title: ' + title.value + '</li> \r\n ' + 
+            '<li> Overview: ' + ov.value + '</li> \r\n ' + 
+            '<li> Goals: ' + goals.value + '</li> \r\n ' + 
+            //'<li>Topic: ' + lectTopic.value + '</li> \r\n ' + 
+            //'<li>Lecture: ' + lecture.value + '</li> \r\n' +
+			'</ul>  \r\n ' +
+			'</body> \r\n ' +	
+			'</html>';
+			
+*/        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        //const textToBLOB = new Blob([data], { type: '' });		
+        const sFileName = 'Day' + day_num.value + '.html';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    } 
+</script>
+<script>
+//let doy = 234
+function upLoadFile(n){
+ alert(n)
+}
+function previewFile() {
+
+	alert("inside Preview")
+	
+  const content = document.querySelector('.content');
+  const arr = document.querySelector('.arr');
+  const [file] = document.querySelector('input[type=file]').files;
+  const reader = new FileReader();
+
+	//let myARR = []
+	let myRR = ""
+	let myTitle = "xxx"
+	let myOverview = "BBBB"
+    reader.addEventListener("load", () => {
+    // this will then display a text file
+	myRR = reader.result
+    const myARR = myRR.split(/\r?\n/);
+	//const liARR = myARR[3:8]
+    //const myARR = myRR.split(/[\s\r?\n<>]+/);
+	document.getElementById("demoA").innerHTML = typeof myRR
+	document.getElementById("demoB").innerHTML = typeof myARR
+    //content.innerText = myRR;
+	    //content.innerText = myARR[0];
+		arr.innerText = "DOG " + myRR;
+		//myTitle = myARR[0];
+		document.getElementById("demo1").innerHTML = "PIZZA " + "<pre><code>" + myARR + "</code></pre>";
+		let dayOfYear = 252
+		populatePage(myARR,dayOfYear)
+		  
+  }, false);
+
+  if (file) {
+    reader.readAsText(file);
+  }
+  
+
+}
+function populatePage(myA,dd) {
+	//alert(dd)
+	let tempList = [];
+	let tempVar = [];
+	for (k = 0; k < myA.length; k++) {
+		//tempVar = myA.split(/[<>]+/)
+		//tempVar = myA.split("=")
+	let x = 5
+		//tempList.push(tempVar[1])
+	}
+	document.getElementById("demo2").innerHTML = "CAT" + myA;
+	
+	//let inputF = document.getElementById("Day");
+	//inputF.value = "xyz";
+}
+
+</script>
+<script>
+
+//Make the DIV element draggagle:
+//dragElement(document.getElementById("popupFormLP"));
+
+const draggableContactForm = document.querySelector(".draggable-contact-form");
+//const contactIcon = document.querySelector(".contact-icon");
+const dragIcon = document.querySelector(".draggable-contact-form .drag-icon");
+
+
+draggableContactForm.classList.toggle("active");
+//contactIcon.addEventListener("click", () => {
+//  draggableContactForm.classList.toggle("active");
+//});
+
+const drag = (position) => {
+  let styles = draggableContactForm.getBoundingClientRect();
+  let left = styles.left;
+  let top = styles.top;
+
+  draggableContactForm.style.setProperty(
+    "left",
+    `${left + position.movementX}px`
+  );
+
+  draggableContactForm.style.setProperty(
+    "top",
+    `${top + position.movementY}px`
+  );
+};
+
+dragIcon.addEventListener("mousedown", () => {
+  document.addEventListener("mousemove", drag);
+});
+
+document.addEventListener("mouseup", () => {
+  document.removeEventListener("mousemove", drag);
+});
+
+</script>
+</body>
+</html>
