@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+  outline: red solid 1px;
+  page-break-inside: avoid;
+}
+#nextpage1 {
+  page-break-before: always;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+
+<style>
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 1.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+
+.LPmisc {  
+  background-color:  rgba(0, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border-radius: 10%;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+  margin: 5px;
+}
+ 
+.wrapper {   
+  background-color:  rgba(255, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 100%;
+  border-radius: 10%;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  margin: 5px;
+}
+</style>
+</head>
+<body onload="test()">
+<h1>HELLO</h1>
+<div id="demo">XXX</div>
+
+<!-- Button to generate PDF. -->
+<button id="btnTest">Generate PDF</button>
+<div id ="root">
+
+<!--<input type="file" onchange="previewFile()">-->
+<p class="content"></p>
+<div>THIS IS NOTHING</div>
+<div id="demoA">AAA</div> 
+<div id="demoB">BB BBB BBB</div> 
+<div id="demo0" class="arr">TYPE OF</div>
+<div id="demo1">ZZZ</div> 
+<div id="demo2">from Inside</div>
+
+<input type="button" id="btn" class="btn" value="Save data to file" onclick="saveFile()" />
+
+<h1 class="LPmisc" >HELLO CS50@JHS <span class="wave">&#x1F44B</span></h1>
+
+<div id="LPB_wrapper" class="wrapper">
+<h1 id="LPB">TODAY'S LESSON PLAN</h1>
+<h2 id="LPBDate">Date</h2>
+<h2 id="LPBDoy">TODAY is DAY <span id="DN">###</span> IN OUR JOURNEY</h2>
+</div>
+
+
+<div id="LPJHS_wrapper" class="wrapper">
+<h2 id="LPJHS">School News</h2>
+<p id="LJHS_details" class="details" >DETAILS</p>
+</div>
+
+<div id="LPOV_wrapper" class="wrapper">
+<h2 id="LPOV">OVERVIEW</h2>
+<p id="LPOV_details" class="details" >DETAILS</p>
+  <textarea id="LPOVTA" rows="4" cols="50" placeholder="TBD"></textarea>
+</div>
+
+<div id="LPWU_wrapper" class="wrapper">
+<h2 id="LPWU">WARM UP (Yes, you can/should start!</h2>
+<p id="LPWU_details" class="details" >DETAILS</p>
+</div>
+
+<div id="LPQ_wrapper" class="wrapper">
+<h2 id="LPQ">Questions???</h2>
+</div>
+
+<div id="LPG_wrapper" class="wrapper">
+<h2 id="LPG">GOALS FOR TODAY (and beyond) &#x1F3C0</h2>
+<p id="LPG_details" class="details" >DETAILS</p>
+</div>
+
+<div id="LPN_wrapper" class="wrapper">
+<h2 id="LPN">NEW MATERIAL: EXPANDING OUR HORIZONS &#x1F52D</h2>
+<p id="LPN_details" class="details" >DETAILS</p>
+</div>
+
+<div id="LPA_wrapper" class="wrapper">
+<h2 id="LPA">Assessment </h2>
+<p id="LPA_details" class="details" >DETAILS</p>
+</div>
+
+<div id="LPHW_wrapper" class="wrapper">
+<h2 id="LPHW">HOMEWORK &#x1F62C</h2>
+<p id="LPHW_details" class="details" >DETAILS</p>
+</div>
+
+<div class="LPmisc" >ANY QUESTIONS???</div>
+<div class="LPmisc" >GOODBYE CS50@JHS <span class="wave">&#x1F44B </span></div>
+
+<script>
+const firstDay = 240;
+let currentYear = 2022;
+let doy = 14;
+let dayOfYear = firstDay + doy;
+let initialDate = new Date(currentYear, 0); // initialized at first day of 2018
+let date = new Date(initialDate.setDate(dayOfYear)); // add your dayOfYear
+
+let NoTimeDate = (date.getMonth()+1)+'/'+ date.getDate() + '/' + date.getFullYear(); 
+
+
+document.getElementById("LPBDate").innerHTML = NoTimeDate;
+document.getElementById("DN").innerHTML = doy;
+
+function previewFile(doy) {
+
+	alert("inside Preview")
+	
+  const content = document.querySelector('.content');
+  const arr = document.querySelector('.arr');
+  //const [file] = document.querySelector('input[type=file]').files;
+  const file = "Day14.txt"
+  const reader = new FileReader();
+
+	//let myARR = []
+	let myRR = ""
+	let myTitle = "xxx"
+	let myOverview = "BBBB"
+    reader.addEventListener("load", () => {
+    // this will then display a text file
+	myRR = reader.result
+    const myARR = myRR.split("$");
+	//const liARR = myARR[3:8]
+    //const myARR = myRR.split(/[\s?
+<>]+/);
+	document.getElementById("demoA").innerHTML = typeof myRR
+	document.getElementById("demoB").innerHTML = typeof myARR
+    //content.innerText = myRR;
+	    //content.innerText = myARR[0];
+		arr.innerText = "DOG " + myRR;
+		//myTitle = myARR[0];
+		document.getElementById("demo1").innerHTML = "PIZZA " + myARR;
+		//let dayOfYear = 252
+		populatePage(myARR,doy)
+		  
+  }, false);
+
+  if (file) {
+    reader.readAsText(file);
+  }
+  
+
+}
+function populatePage(myA,dd) {
+	//alert(dd)
+	let tempList = [];
+	let tempVar = [];
+	for (k = 0; k < myA.length; k++) {
+		//tempVar = myA.split(/[<>]+/)
+		//tempVar = myA.split("=")
+	let x = 5
+		//tempList.push(tempVar[1])
+	}
+	document.getElementById("demo2").innerHTML = "CAT" + myA;
+	
+	/*
+		'day_num.value' + "$" +
+		'Lots of things' + "$" +
+		'General Info' + "$" +
+		'Try this' + "$" +
+		'targets' + "$" +
+		'new stuff' + "$" +
+		'did you learn' + "$" +
+		'homework';
+	*/
+	
+	document.getElementById("LPB").innerHTML = myA[0]	
+	document.getElementById("LPJHS").innerHTML = myA[1]
+	document.getElementById("LPOV").innerHTML = myA[2]
+	document.getElementById("LPWU").innerHTML = myA[3]	
+	document.getElementById("LPG").innerHTML = myA[4]
+	document.getElementById("LPN").innerHTML = myA[5]
+	document.getElementById("LPA").innerHTML = myA[6]
+	document.getElementById("LPHW").innerHTML = myA[7]	
+	//inputF.value = "xyz";
+}
+
+
+</script>
+<script>
+    let saveFile = () => {
+    	
+        // Get the data from each element on the form.
+		const day_num = document.getElementById("Day");
+    	const title = document.getElementById("Title");
+        const ov = document.getElementById("OV");
+        const goals = document.getElementById("Goals");
+        //const lectTopic = document.getElementById('txtTopic');
+        //const lecture = document.getElementById('msg');
+        //const assessment = document.getElementById('txtAssess');
+        //const assignment = document.getElementById('txtAssign');
+     
+        // This variable stores all the data.
+        let data =
+		'day_num.value' + "$" +
+		'Lots of things' + "$" +
+		'General Info' + "$" +
+		'Try this' + "$" +
+		'targets' + "$" +
+		'new stuff' + "$" +
+		'did you learn' + "$" +
+		'homework';
+				
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        //const textToBLOB = new Blob([data], { type: '' });		
+        const sFileName = 'Day' + day_num.value + '.txt';	   // The file to save the data.
+
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    } 
+</script>
+</body>
+</html>
