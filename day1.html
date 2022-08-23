@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="myTitle">ZXZX</title>	
+</head>
+<style>
+    div {
+  outline: red solid 1px;
+  page-break-inside: avoid;
+}
+#nextpage1 {
+  page-break-before: always;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<style>
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 1.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.LPmisc {  
+  background-color:  rgba(0, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+  margin: 5px;
+}
+ 
+.wrapper {   
+  background-color:  rgba(255, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  margin: 5px;
+}
+.cb { margin: 10px}
+
+.TAP {
+ background-color:  rgba(255, 255,255, 0.0);
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 60%;
+  text-align: left;
+  outline: none;
+  font-size: 24px;
+  	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+textarea {
+	width: 60%;
+   font-size: 24px;
+}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body id ="root">
+<div id="demo">XXX</div>
+
+<!-- Button to generate PDF. -->
+<button id="btnTest" class="cb" onclick="test()">Generate PDF</button>
+
+<button id="btnSave" class="cb"  onclick="myGeeks()">Save HTML</button>
+<div id ="root2">
+
+<h1 class="LPmisc" >HELLO CS50@JHS <span class="wave">&#x1F44B</span></h1>
+
+<div id="LPB_wrapper" class="wrapper">
+<h1 id="LPB">TODAY'S LESSON PLAN</h1>
+<h2 id="LPBDate">Date</h2>
+<h2 id="LPBDoy">TODAY is DAY <span id="DN">###</span> IN OUR JOURNEY</h2>
+</div>
+
+
+<div id="LPJHS_wrapper" class="wrapper">
+<h2 id="LPJHS">School News</h2>
+<p id="LJHS_details" class="details" >DETAILS</p>
+<textarea id="LPJHSTA" class="TA" rows="5" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPJHSTA_P" class="TAP"></p>
+</div>
+
+<div id="LPOV_wrapper" class="wrapper">
+<h2 id="LPOV">OVERVIEW</h2>
+<p id="LPOV_details" class="details" >DETAILS</p>
+<textarea id="LPOVTA" class="TA" rows="10" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPOVTA_P" class="TAP"></p>
+</div>
+
+<div id="LPWU_wrapper" class="wrapper">
+<h2 id="LPWU">WARM UP (Yes, you can/should start!</h2>
+<p id="LPWU_details" class="details" >DETAILS</p>
+<textarea id="LPWUTA" class="TA" rows="5" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPWUTA_P" class="TAP"></p>
+
+</div>
+
+<div id="LPQ_wrapper" class="wrapper">
+<h2 id="LPQ">Questions???</h2>
+</div>
+
+<div id="LPG_wrapper" class="wrapper">
+<h2 id="LPG">GOALS FOR TODAY (and beyond) &#x1F3C0</h2>
+<p id="LPG_details" class="details" >DETAILS</p>
+<textarea id="LPGTA" class="TA" rows="10" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPGTA_P" class="TAP"></p>
+</div>
+
+<div id="LPN_wrapper" class="wrapper">
+<h2 id="LPN">NEW MATERIAL: EXPANDING OUR HORIZONS &#x1F52D</h2>
+<p id="LPN_details" class="details" >DETAILS</p>
+<textarea id="LPNTA" class="TA" rows="10" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPNTA_P" class="TAP"></p>
+</div>
+
+<div id="LPA_wrapper" class="wrapper">
+<h2 id="LPA">Assessment </h2>
+<p id="LPA_details" class="details" >DETAILS</p>
+<textarea id="LPATA" class="TA" rows="10" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPATA_P" class="TAP"></p>
+</div>
+
+<div id="LPHW_wrapper" class="wrapper">
+<h2 id="LPHW">HOMEWORK &#x1F62C</h2>
+<p id="LPHW_details" class="details" >DETAILS</p>
+<textarea id="LPHWTA" class="TA" rows="10" cols="50">
+<span style="white-space: pre;">
+ORIGINAL CONTENT
+</span>
+</textarea>
+<p id="LPHWTA_P" class="TAP"></p>
+</div>
+
+<div class="LPmisc" >ANY QUESTIONS???</div>
+<div class="LPmisc" >GOODBYE CS50@JHS <span class="wave">&#x1F44B </span></div>
+</div>
+<script>
+document.querySelectorAll(".TA").forEach(a=>a.style.display = "initial");
+const firstDay = 240;
+let currentYear = 2022;
+let doy = document.getElementById("myTitle").innerHTML;
+alert(doy)
+let dayOfYear = firstDay + parseInt(doy[3:6]);
+let initialDate = new Date(currentYear, 0); // initialized at first day of 2018
+let date = new Date(initialDate.setDate(dayOfYear)); // add your dayOfYear
+
+let NoTimeDate = (date.getMonth()+1)+'/'+ date.getDate() + '/' + date.getFullYear(); 
+
+
+document.getElementById("LPBDate").innerHTML = NoTimeDate;
+document.getElementById("DN").innerHTML = doy;
+
+function previewFile(doy) {
+
+	alert("inside Preview")
+
+}
+
+
+
+</script>
+<script>
+ function myGeeks() {
+	let new_TAC = ""
+	document.querySelectorAll(".TAP").forEach(a=>a.style.backgroundColor = "rgba(255, 255,255, 1.0)");
+	alert("myGeets")
+	
+		new_TAC = document.getElementById("LPJHSTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPJHSTA").innerHTML  = new_TAC;
+		document.getElementById("LPJHSTA_P").innerHTML = new_TAC;
+	
+		new_TAC = document.getElementById("LPOVTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPOVTA").innerHTML  = new_TAC;
+		document.getElementById("LPOVTA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPWUTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPWUTA").innerHTML  = new_TAC;
+		document.getElementById("LPWUTA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPOVTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPOVTA").innerHTML  = new_TAC;
+		document.getElementById("LPOVTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPGTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPGTA").innerHTML  = new_TAC;
+		document.getElementById("LPGTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPNTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPNTA").innerHTML  = new_TAC;
+		document.getElementById("LPNTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPATA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPATA").innerHTML  = new_TAC;
+		document.getElementById("LPATA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPHWTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPHWTA").innerHTML  = new_TAC;
+		document.getElementById("LPHWTA_P").innerHTML = new_TAC;
+				
+	saveFile();
+}
+</script>
+<script>
+    let saveFile = () => {
+    	alert("WE R HERE")
+        // Get the data from each element on the form.
+		const day_num = 321;
+		const fullPage = document.getElementById("root").value;
+		
+		let x = document.getElementById('root').parentElement.innerHTML			
+		//let myFileName = location.href.split("/").slice(-1); 
+
+		let myFileName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+		alert(myFileName);
+		alert(typeof(myFileName));
+		let noExt = myFileName.split(".");
+		alert(noExt[0]);
+		alert(typeof(noExt[0]));
+		alert(noExt[1]);
+		alert(typeof(noExt[1]));
+
+		//const fullPage = document.getElementById("root").value;
+		
+		//let x = document.getElementById('root').parentElement.innerHTML		
+    	//const title = document.getElementById("Title");
+        //const ov = document.getElementById("OV");
+        let ov = document.getElementById("LPOVTA").value;
+		alert(ov);
+        //const goals = document.getElementById("Goals");
+        //const lectTopic = document.getElementById('txtTopic');
+        //const lecture = document.getElementById('msg');
+        //const assessment = document.getElementById('txtAssess');
+        //const assignment = document.getElementById('txtAssign');
+     
+        // This variable stores all the data.
+        let data = x + ov;
+		//"DOGS AND CATS";
+		/*
+		'day_num.value' + "$" + """
+		Overview + "$" +
+        """
+		'General Info' + "$" +
+		'Try this' + "$" +
+		'targets' + "$" +
+		'new stuff' + "$" +
+		'did you learn' + "$" +
+		'homework';
+		*/		
+        
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+        //const textToBLOB = new Blob([data], { type: '' });		
+        //const sFileName = noExt[0] + "_updated" + "." + noExt[1];
+		//myFileName;
+		//noExt[0] + "_updated." + noExt[1];
+
+        //const sFileName = 'Day' + day_num.toString() + '.html';	   
+		//const sFileName = 'Day' + day_num.toString() + '.html';	   // The file to save the data.
+		const sFileName = noExt[0] + '_updated' + '.html'; 
+		//+ noExt[1];
+		
+				alert(sFileName);
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+<script>
+document.getElementById("demo").innerHTML = "ZZZ";
+
+// 'sampleZZZpdf.pdf'
+
+function test() {
+	document.querySelectorAll(".TA").forEach(a=>a.style.display = "none");
+	var mt = document.getElementById('myTitle').value;
+	var element = document.getElementById('root');
+	var mtfile = mt + ".pdf"
+	// Generate the PDF.
+	html2pdf().from(element).set({
+	margin:       [1, 0, 0, 0], 
+    filename: mtfile,
+  	pageBreak: { mode: 'css', before:'#nextpage1'},
+    jsPDF: {orientation: 'landscape', unit: 'in', format: 'letter'}
+	}).toPdf().get('pdf').then(function (pdf) {
+    var totalPages = pdf.internal.getNumberOfPages();
+
+    for (i = 1; i <= totalPages; i++) {
+    	pdf.setPage(i);
+      pdf.setFontSize(10);
+      pdf.setTextColor(150);
+    pdf.text('Page ' + i + ' of ' + totalPages, (pdf.internal.pageSize.getWidth()/2.25), (pdf.internal.pageSize.getHeight()-8)); 
+      }
+  }).save();
+}
+</script>
+</body>
+</html>
