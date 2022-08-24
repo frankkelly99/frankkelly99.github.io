@@ -414,7 +414,7 @@ function previewFile(dayID) {
 
 	let pageAddress = "./dayPage_Default01.html"
 	// Lesson Plan Status
-		DayPlans[1] = pageAddress;
+		DayPlans[1] = "day1.html"
 	
 	if ((dnp % 7) == 0) {
 		alert("Sunday! No School!")
@@ -427,7 +427,7 @@ function previewFile(dayID) {
 		pageAddress = "dayPage_Default01.html"
 		
 //	let active_days = {active_days}
-		DayPlans[1] = "day1.html"
+		//DayPlans[1] = "day1.html"
 	
 	if (Object.hasOwn(active_days,dayID)){
 		if (active_days[dayID] == 1) {
