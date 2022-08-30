@@ -343,24 +343,24 @@ Please watch...
 //document.querySelectorAll(".TA").forEach(a=>a.style.display = "initial");
 const firstDay = 240;
 let currentYear = 2022
-alert(firstDay)
+//alert(firstDay)
 
 		let myFileName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
-		alert(myFileName);
+		//alert(myFileName);
 
-		alert(typeof(myFileName));
+		//alert(typeof(myFileName));
 		let noExt = myFileName.split(/[\s(.)%]+/);
-		alert(noExt[0]);
-		alert(typeof(noExt[0]));
-		alert(noExt[-1]);
-		alert(typeof(noExt[-1]));
+		//alert(noExt[0]);
+		//alert(typeof(noExt[0]));
+		//alert(noExt[-1]);
+		//alert(typeof(noExt[-1]));
 		
 //let doy = document.getElementById("myTitle").innerHTML;
 //alert(doy)
 let doy = noExt[0].substring(3,)
-alert(doy)
+//alert(doy)
 let dayOfYear = firstDay + parseInt(doy);
-alert(dayOfYear)
+//alert(dayOfYear)
 let initialDate = new Date(currentYear, 0); // initialized at first day of 2018
 let date = new Date(initialDate.setDate(dayOfYear)); // add your dayOfYear
 
@@ -371,7 +371,7 @@ document.getElementById("DN").innerHTML = doy;
 
 function previewFile(doy) {
 
-	alert("inside Preview")
+	//alert("inside Preview")
 }
 
 //function showTA() {
@@ -382,8 +382,8 @@ function previewFile(doy) {
 <script>
 function myGeeks(n) {
 	//let n = 1;
-	alert(n);
-	alert(typeof(n));
+	//alert(n);
+	//alert(typeof(n));
 	
     if (n == "btnEdit") {
 		//document.querySelectorAll("textarea").forEach(a=>a.style.display = "block");
@@ -399,7 +399,7 @@ function myGeeks(n) {
 	}
 	let new_TAC = ""
 	document.querySelectorAll(".TAP").forEach(a=>a.style.backgroundColor = "rgba(255, 255,255, 1.0)");
-	alert("myGeets")
+	//alert("myGeets")
 		new_TAC = document.getElementById("LPJHSTA").value
 			//= "Hello GeeksForGeeks . ";
 		document.getElementById("LPJHSTA").innerHTML  = new_TAC;
@@ -448,7 +448,7 @@ function myGeeks(n) {
 //	if (n == 0) {
 //
 //	}
-    	alert("WE R HERE")
+    	//alert("WE R HERE")
         // Get the data from each element on the form.
 		//const day_num = 321;
 		//const fullPage = document.getElementById("root").value;
