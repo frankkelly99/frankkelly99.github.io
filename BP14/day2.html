@@ -1,0 +1,570 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>	
+	
+<title id="myTitle">LESSON PLAN</title>	
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><meta name="viewport" content="width=device-width, initial-scale=1"></head>
+	
+<!--<style>
+    div {
+  outline: red solid 1px;
+  page-break-inside: avoid;
+}
+#nextpage1 {
+  page-break-before: always;
+}
+</style>-->
+
+<style>
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 1.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.LPmisc {  
+  background-color:  rgba(0, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+  margin: 5px;
+}
+ 
+.wrapper {   
+  background-color:  rgba(255, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  margin: 5px;
+}
+.cb { margin: 10px}
+
+.TA {display: none;}
+
+.TAP {
+ background-color:  rgba(255, 255,255, 0.0);
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 90%;
+  height: auto;  
+  text-align: left;
+  outline: none;
+  font-size: 24px;
+  	display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+textarea {
+	width: 90%;
+   font-size: 24px;
+   cols="80";
+   display: none;
+}
+.embedded2 { width: 90%;
+			height: 500px;
+		}
+</style>
+</head><body id="root">
+<!--<body id="root" data-new-gr-c-s-check-loaded="14.1077.0" data-gr-ext-installed="" data-new-gr-c-s-loaded="14.1077.0">
+-->
+
+
+<div id="demo" data-pf_style_display="block" data-pf_style_visibility="visible"></div>
+
+<!-- Button to generate PDF. -->
+<button id="btnTest" class="cb" onclick="test()" data-pf_style_display="inline-block" data-pf_style_visibility="visible">Generate PDF</button>
+
+<button id="btnEdit" class="cb" onclick="myGeeks(this.id)">Edit HTML</button>
+
+<button id="btnSave" class="cb" onclick="myGeeks(this.id)">Save HTML</button>
+
+<!--<button id="btnSave" class="cb" onclick="myGeeks()" data-pf_style_display="inline-block" data-pf_style_visibility="visible">Save HTML</button><div id="root2" data-pf_style_display="block" data-pf_style_visibility="visible">
+-->
+<h1 class="LPmisc" data-pf_style_display="block" data-pf_style_visibility="visible">HELLO BP14@JHS <span class="wave" data-pf_style_display="inline-block" data-pf_style_visibility="visible">👋</span></h1>
+
+<div id="LPB_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h1 id="LPB" data-pf_style_display="block" data-pf_style_visibility="visible">TODAY'S LESSON PLAN</h1>
+<h2 id="LPBDate" data-pf_style_display="block" data-pf_style_visibility="visible">8/29/2022</h2>
+<h2 id="LPBDoy" data-pf_style_display="block" data-pf_style_visibility="visible">TODAY is DAY <span id="DN" data-pf_style_display="inline" data-pf_style_visibility="visible">1</span> IN OUR JOURNEY</h2>
+</div>
+
+
+<div id="LPJHS_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPJHS" data-pf_style_display="block" data-pf_style_visibility="visible">School News</h2>
+<p id="LJHS_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPJHSTA" class="TA hidden-originally" rows="5" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+HELLO EVERYONE!!! WELCOME!!!
+
+PLEASE SEE JORDAN'S HOME PAGE
+&lt;a href="https://www.dpsnc.net/domain/54"&gt;JHS&lt;/a&gt; for additional news!!!
+&lt;/span&gt;
+</textarea>
+<p id="LPJHSTA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+HELLO EVERYONE!!! WELCOME!!!
+
+PLEASE SEE JORDAN'S HOME PAGE
+<a href="https://www.dpsnc.net/domain/54">JHS</a> for additional news!!!
+</span>
+</p>
+</div>
+
+<div id="LPOV_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPOV" data-pf_style_display="block" data-pf_style_visibility="visible">OVERVIEW</h2>
+<p id="LPOV_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPOVTA" class="TA hidden-originally" rows="10" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+Today, I will describe:
+   1) Another shot at FIVE hats!!!
+   2) Problem Solving!!!
+   3) Programming Basics
+   4) Create with Scratch!
+&lt;/span&gt;
+</textarea>
+<p id="LPOVTA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Today, I will describe:
+   1) Another shot at FIVE hats!!!
+   2) Problem Solving!!!
+   3) Programming Basics
+   4) Create with Scratch!
+</span>
+</p>
+</div>
+
+<div id="LPWU_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPWU" data-pf_style_display="block" data-pf_style_visibility="visible">WARM UP (Yes, you can/should start!</h2>
+<p id="LPWU_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPWUTA" class="TA hidden-originally" rows="5" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+Here is another classic puzzle that will sharpen your mind. 
+Let's suppose you need to measure out exactly 4 liters of water. 
+But, of course, you have a problem.
+
+You have two containers each 3 and 5 liters in volume respectively. 
+Each container has no other marking except for the fact that it only provides its known volume. 
+Using a running tap to fill them how would you measure out exactly 4 liters?
+&lt;/span&gt;
+</textarea>
+<p id="LPWUTA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Here is another classic puzzle that will sharpen your mind. 
+Let's suppose you need to measure out exactly 4 liters of water. 
+But, of course, you have a problem.
+
+You have two containers each 3 and 5 liters in volume respectively. 
+Each container has no other marking except for the fact that it only provides its known volume. 
+Using a running tap to fill them how would you measure out exactly 4 liters?
+</span>
+</p>
+
+</div>
+
+<div id="LPQ_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPQ" data-pf_style_display="block" data-pf_style_visibility="visible">Questions???</h2>
+</div>
+
+<div id="LPG_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPG" data-pf_style_display="block" data-pf_style_visibility="visible">GOALS FOR TODAY (and beyond) 🏀</h2>
+<p id="LPG_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPGTA" class="TA hidden-originally" rows="10" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+
+&lt;a href="https://www.youtube.com/watch?v=Y8Tko2YC5hA"&gt;Some Basics&lt;/a&gt;
+
+Again, today's goals are
+ 1) How to solve Problems
+ 2) Introduce Programming Basics
+ 3) Exploring Scratch
+&lt;/span&gt;
+</textarea>
+<p id="LPGTA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+
+<a href="https://www.youtube.com/watch?v=Y8Tko2YC5hA">Some Basics</a>
+
+Again, today's goals are
+ 1) How to solve Problems
+ 2) Introduce Programming Basics
+ 3) Exploring Scratch
+</span>
+</p>
+</div>
+
+<div id="LPN_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPN" data-pf_style_display="block" data-pf_style_visibility="visible">NEW MATERIAL: EXPANDING OUR HORIZONS 🔭</h2>
+<p id="LPN_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPNTA" class="TA hidden-originally" rows="10" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+What is Computer Science?
+
+&lt;a href="https://www.youtube.com/watch?v=qYZF6oIZtfc"&gt;CS 4 YOU!&lt;/a&gt;
+
+&lt;iframe width="800" height="280" src="https://www.youtube.com/embed/qYZF6oIZtfc?start=0&amp;end=59;rel=0&amp;anp;showinfo=0" title="Anybody Can Learn - 60 sec teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;strong&gt;
+PROBLEM SOLVING &amp; COMPUTATIONAL THINKING!!!
+
+What is Python Programming I?
+&lt;/strong&gt;
+
+How much math do you need for BP14? Not very much...
+
+1) basic operations &amp; order of operations
+2) x-y coordinates
+
+What is BP14?
+
+&lt;a&gt;https://www.youtube.com/watch?v=Y8Tko2YC5hA"&gt;Some Basics&lt;/a&gt;
+
+What is our syllabus for BP14@JHS?
+
+Tools, websites &amp; applications...
+  1) Jordan Email
+  2) Power School
+  3) CANVAS
+
+&lt;/span&gt;
+</textarea>
+<p id="LPNTA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+What is Computer Science?
+
+<a href="https://www.youtube.com/watch?v=qYZF6oIZtfc">CS 4 YOU!</a>
+
+<iframe width="800" height="280" src="https://www.youtube.com/embed/qYZF6oIZtfc?start=0&amp;end=59;rel=0&amp;anp;showinfo=0" title="Anybody Can Learn - 60 sec teaser" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<strong>
+PROBLEM SOLVING &amp; COMPUTATIONAL THINKING!!!
+
+What is Python Programming I?
+</strong>
+
+How much math do you need for BP14? Not very much...
+
+1) basic operations &amp; order of operations
+2) x-y coordinates
+
+What is BP14?
+
+
+<a href="https://www.youtube.com/watch?v=Y8Tko2YC5hA">Some Basics</a>
+
+What is our syllabus for BP14@JHS?
+
+Tools, websites &amp; applications...
+  1) Jordan Email
+  2) Power School
+  3) CANVAS
+
+</span>
+</p>
+</div>
+
+<div id="LPA_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPA" data-pf_style_display="block" data-pf_style_visibility="visible">Assessment </h2>
+<p id="LPA_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPATA" class="TA hidden-originally" rows="10" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+Did you introduce yourself?
+Did you get your questions answered?
+Do you have your Chromebook &amp; charger from DPS? Working?
+Do you have a school email account?
+Did you log into...
+1) CANVAS?
+2) POWERSCHOOL?
+3) GMAIL?
+4) &lt;a href="https://scratch.mit.edu/"&gt;SCRATCH&lt;/a&gt; 
+
+&lt;/span&gt;
+</textarea>
+<p id="LPATA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Did you introduce yourself?
+Did you get your questions about BP14 answered?
+Do you have your Chromebook &amp; charger from DPS? Working?
+Do you have a school email account?
+Did you log into...
+1) CANVAS?
+2) POWERSCHOOL?
+3) GMAIL?
+4) <a href="https://scratch.mit.edu/">SCRATCH</a> 
+
+</span>
+</p>
+</div>
+
+<div id="LPHW_wrapper" class="wrapper" data-pf_style_display="block" data-pf_style_visibility="visible">
+<h2 id="LPHW" data-pf_style_display="block" data-pf_style_visibility="visible">HOMEWORK 😬</h2>
+<p id="LPHW_details" class="details" data-pf_style_display="block" data-pf_style_visibility="visible">DETAILS</p>
+<textarea id="LPHWTA" class="TA hidden-originally" rows="10" cols="50" style="display: none;" data-pf_style_display="none" data-pf_style_visibility="visible" value="<span style=&quot;white-space: pre;&quot;>
+ORIGINAL CONTENT
+</span>
+">&lt;span style="white-space: pre;"&gt;
+Please watch...
+
+&lt;a href="https://www.youtube.com/watch?v=rRSD128KWIM"&gt;What is a Computer?&lt;/a&gt;
+&lt;/span&gt;
+</textarea>
+<p id="LPHWTA_P" class="TAP" data-pf_style_display="block" data-pf_style_visibility="visible" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Please watch...
+
+<a href="https://www.youtube.com/watch?v=rRSD128KWIM">What is a Computer?</a>
+</span>
+</p>
+</div>
+
+<div class="LPmisc" data-pf_style_display="block" data-pf_style_visibility="visible">ANY QUESTIONS???</div>
+<div class="LPmisc" data-pf_style_display="block" data-pf_style_visibility="visible">GOODBYE BP14@JHS <span class="wave" data-pf_style_display="inline-block" data-pf_style_visibility="visible">👋 </span></div>
+
+<script>
+//data-pf_style_display="none" data-pf_style_visibility="visible" class="hidden-originally">
+//document.querySelectorAll(".TA").forEach(a=>a.style.display = "initial");
+const firstDay = 240;
+let currentYear = 2022;
+
+		let myFileName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+		//alert(myFileName);
+
+		//alert(typeof(myFileName));
+		let noExt = myFileName.split(/[\s(.)%]+/);
+		//alert(noExt[0]);
+		//alert(typeof(noExt[0]));
+		//alert(noExt[-1]);
+		//alert(typeof(noExt[-1]));
+
+let doy = noExt[0].substring(3,)
+//alert(doy)
+
+let dayOfYear = firstDay + parseInt(doy);
+let initialDate = new Date(currentYear, 0); // initialized at first day of 2018
+let date = new Date(initialDate.setDate(dayOfYear)); // add your dayOfYear
+
+let NoTimeDate = (date.getMonth()+1)+'/'+ date.getDate() + '/' + date.getFullYear(); 
+
+document.getElementById("LPBDate").innerHTML = NoTimeDate;
+document.getElementById("DN").innerHTML = doy;
+
+function previewFile(doy) {
+
+	//alert("inside Preview")
+
+}
+</script>
+<script>
+//data-pf_style_display="none" data-pf_style_visibility="visible" class="hidden-originally">
+function myGeeks(n) {
+	//let n = 1;
+	//alert(n);
+	//alert(typeof(n));
+	
+    if (n == "btnEdit") {
+		//document.querySelectorAll("textarea").forEach(a=>a.style.display = "block");
+		//document.querySelectorAll("iframe").forEach(a=>a.style.display = "block");
+		document.getElementsByTagName("textarea").forEach(a=>a.style.display = "block");
+		document.getElementsByTagName("iframe").forEach(a=>a.style.display = "block");
+	}
+	else {
+		//document.querySelectorAll("textarea").forEach(a=>a.style.display = "none");
+		//document.querySelectorAll("iframe").forEach(a=>a.style.display = "none");
+		document.getElementsByTagName("textarea").forEach(a=>a.style.display = "none");
+		document.getElementsByTagName("iframe").forEach(a=>a.style.display = "none");
+	}
+	let new_TAC = ""
+	document.querySelectorAll(".TAP").forEach(a=>a.style.backgroundColor = "rgba(255, 255,255, 1.0)");
+	//alert("myGeets")
+	
+		new_TAC = document.getElementById("LPJHSTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPJHSTA").innerHTML  = new_TAC;
+		document.getElementById("LPJHSTA_P").innerHTML = new_TAC;
+	
+		new_TAC = document.getElementById("LPOVTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPOVTA").innerHTML  = new_TAC;
+		document.getElementById("LPOVTA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPWUTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPWUTA").innerHTML  = new_TAC;
+		document.getElementById("LPWUTA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPOVTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPOVTA").innerHTML  = new_TAC;
+		document.getElementById("LPOVTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPGTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPGTA").innerHTML  = new_TAC;
+		document.getElementById("LPGTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPNTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPNTA").innerHTML  = new_TAC;
+		document.getElementById("LPNTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPATA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPATA").innerHTML  = new_TAC;
+		document.getElementById("LPATA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPHWTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPHWTA").innerHTML  = new_TAC;
+		document.getElementById("LPHWTA_P").innerHTML = new_TAC;
+				
+	saveFile();
+}
+</script>
+<script>
+//data-pf_style_display="none" data-pf_style_visibility="visible" class="hidden-originally">
+    let saveFile = () => {
+    	//alert("WE R HERE")
+        // Get the data from each element on the form.
+		//const day_num = 321;
+		//const fullPage = document.getElementById("root").value;
+		
+		let x = document.getElementById('root').parentElement.outerHTML			
+		//let myFileName = location.href.split("/").slice(-1); 
+
+		//let myFileName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+		//alert(myFileName);
+		//alert(typeof(myFileName));
+		//let noExt = myFileName.split(".");
+		//alert(noExt[0]);
+		//alert(typeof(noExt[0]));
+		//alert(noExt[1]);
+		//alert(typeof(noExt[1]));
+
+		//const fullPage = document.getElementById("root").value;
+		
+		//let x = document.getElementById('root').parentElement.innerHTML		
+    	//const title = document.getElementById("Title");
+        //const ov = document.getElementById("OV");
+        //let ov = document.getElementById("LPOVTA").value;
+		//alert(ov);
+        //const goals = document.getElementById("Goals");
+        //const lectTopic = document.getElementById('txtTopic');
+        //const lecture = document.getElementById('msg');
+        //const assessment = document.getElementById('txtAssess');
+        //const assignment = document.getElementById('txtAssign');
+     
+        // This variable stores all the data.
+        //let data = x + ov;
+		//"DOGS AND CATS";
+		/*
+		'day_num.value' + "$" + """
+		Overview + "$" +
+        """
+		'General Info' + "$" +
+		'Try this' + "$" +
+		'targets' + "$" +
+		'new stuff' + "$" +
+		'did you learn' + "$" +
+		'homework';
+		*/		
+        // This variable stores all the data.
+        let data = x;
+
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+		const sFileName = noExt[0] + '.html';         
+        // Convert the text to BLOB.
+        //const textToBLOB = new Blob([data], { type: 'text/plain' });
+        //const textToBLOB = new Blob([data], { type: '' });		
+        //const sFileName = noExt[0] + "_updated" + "." + noExt[1];
+		//myFileName;
+		//noExt[0] + "_updated." + noExt[1];
+
+        //const sFileName = 'Day' + day_num.toString() + '.html';	   
+		//const sFileName = 'Day' + day_num.toString() + '.html';	   // The file to save the data.
+		//const sFileName = noExt[0] + '.html'; 
+		//+ noExt[1];
+		
+				alert(sFileName);
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+
+        newLink.click(); 
+    }
+</script>
+<script>
+//data-pf_style_display="none" data-pf_style_visibility="visible" class="hidden-originally">
+document.getElementById("demo").innerHTML = "ZZZ";
+
+// 'sampleZZZpdf.pdf'
+
+function test() {
+	document.getElementsByTagName("textarea").forEach(a=>a.style.display = "none");
+	document.getElementsByTagName("iframe").forEach(a=>a.style.display = "none");
+
+	//document.querySelectorAll(".TA").forEach(a=>a.style.display = "none");
+	var mt = document.getElementById('myTitle').value;
+	var element = document.getElementById('root');
+	var mtfile = mt + ".pdf"
+	// Generate the PDF.
+	html2pdf().from(element).set({
+	margin:       [1, 0, 0, 0], 
+    filename: mtfile,
+  	pageBreak: { mode: 'css', before:'#nextpage1'},
+    jsPDF: {orientation: 'landscape', unit: 'in', format: 'letter'}
+	}).toPdf().get('pdf').then(function (pdf) {
+    var totalPages = pdf.internal.getNumberOfPages();
+
+    for (i = 1; i <= totalPages; i++) {
+    	pdf.setPage(i);
+      pdf.setFontSize(10);
+      pdf.setTextColor(150);
+    pdf.text('Page ' + i + ' of ' + totalPages, (pdf.internal.pageSize.getWidth()/2.25), (pdf.internal.pageSize.getHeight()-8)); 
+      }
+  }).save();
+}
+</script>
+</body></html>
