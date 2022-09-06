@@ -307,8 +307,8 @@ let TopicID = ""
 		//alert(ElementID + " full"); //day
 		ParentID = "Week" + week_num.toString() + "_content"
 
-		if (!Topics.hasOwnProperty(ElementID)) {
-			Topics[ElementID] = "Today's BIG Lesson"
+		if (Topics.hasOwnProperty(ElementID)) {
+			//Topics[ElementID] = "Today's BIG Lesson"
 			TopicID = ElementID
 		} else {
 			TopicID = "Day"
