@@ -1,0 +1,487 @@
+<html><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>	
+	
+<title id="myTitle">LESSON PLAN</title>	
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><style>
+<style type="text/css">
+.wave {
+  animation-name: wave-animation;  /* Refers to the name of your @keyframes element below */
+  animation-duration: 1.5s;        /* Change to speed up or slow down */
+  animation-iteration-count: infinite;  /* Never stop waving :) */
+  transform-origin: 70% 70%;       /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  /* The following five values can be played with to make the waving more or less extreme */
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  /* Reset for the last half to pause */
+  100% { transform: rotate( 0.0deg) }
+}
+
+.LPmisc {  
+  background-color:  rgba(0, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 10px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  font-size: 20px;
+  margin: 5px;
+}
+ 
+.wrapper {   
+  background-color:  rgba(255, 0,0, 0.8);
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  width: 90%;
+  border-radius: 10px;
+  text-align: center;
+  outline: none;
+  font-size: 15px;
+  margin: 5px;
+}
+.cb { margin: 10px}
+
+.TA {display: none;}
+
+.TAP {
+ background-color:  rgba(255, 255,255, 0.0);
+  color: black;
+  cursor: pointer;
+  padding: 5px;
+  width: 90%;
+  height: auto;
+  text-align: left;
+  outline: none;
+  font-size: 24px;
+  	display: block;
+    margin-left: auto;
+    margin-right: auto;
+  border: 5px;
+  border-color: black;
+  radius: 5px;
+}
+textarea {
+	width: 90%;
+   font-size: 24px;
+   cols="80";
+   display: none;
+}
+.embedded2 { width: 90%;
+			height: 500px;
+		}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</script>
+</head>
+<body id="root">
+
+<!-- Button to generate PDF. <div id="demo">XXX</div>-->
+<button id="btnTest" class="cb" onclick="test()">Generate PDF</button>
+
+<button id="btnEdit" class="cb" onclick="myGeeks(this.id)">Edit HTML</button>
+
+<button id="btnSave" class="cb" onclick="myGeeks(this.id)">Save HTML</button>
+<div id="root2">
+
+<h1 class="LPmisc">HELLO CS50@JHS <span class="wave">👋</span></h1>
+
+<div id="LPB_wrapper" class="wrapper">
+<h1 id="LPB">TODAY'S LESSON PLAN</h1>
+<h2 id="LPBDate">8/30/2022</h2>
+<h2 id="LPBDoy">TODAY is DAY <span id="DN">2</span> IN OUR JOURNEY</h2>
+</div>
+
+<div id="LPJHS_wrapper" class="wrapper">
+<h2 id="LPJHS">School News</h2>
+<textarea id="LPJHSTA" class="TA" rows="5" style="display: none;">&lt;span style="white-space: pre;"&gt;
+HELLO EVERYONE!!! WELCOME!!!
+
+Update contact information in PowerSchool
+
+Contact school nurse for any health-related issues!
+
+PLEASE SEE JORDAN'S HOME PAGE &lt;a href="https://www.dpsnc.net/domain/54"&gt;JHS&lt;/a&gt; for additional news!!!
+&lt;/span&gt;
+</textarea>
+<p id="LPJHSTA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+HELLO EVERYONE!!! WELCOME!!!
+
+Please make sure your contact information in PowerSchool is correct
+
+If you have medications, allergies or health-related issues contact school nurse!!!
+
+PLEASE SEE JORDAN'S HOME PAGE <a href="https://www.dpsnc.net/domain/54">JHS</a> for additional news!!!
+</span>
+</p>
+</div>
+
+<div id="LPOV_wrapper" class="wrapper">
+<h2 id="LPOV">OVERVIEW</h2>
+<textarea id="LPOVTA" class="TA" rows="10" style="display: none;">&lt;span style="white-space: pre;"&gt;
+Monday's Topics:
+   1) What is Computer Science Principles (CSP)
+   2) The requirements and expectations for CSP.
+   3) Our curriculum (CS50AP).
+   4) We will get to know each other!!!
+
+Tuesday's Topics,
+   1) Some more about CSP (College Board Information)
+   2) Problem Solving
+   3) How Computers can help us solve problems!!!
+   
+Today's Topics,
+	1) Problem Solving
+	2) Scratch
+	3) Binary Numbers
+&lt;/span&gt;
+</textarea>
+<p id="LPOVTA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Yesterday's Topics:
+   1) What is Computer Science Principles (CSP)
+   2) The requirements and expectations for CSP.
+   3) Our curriculum (CS50AP).
+   4) We will get to know each other!!!
+
+Today,
+   1) Some more about CSP (College Board Information)
+   2) Problem Solving
+   3) How Computers can help us solve problems!!!
+</span>
+</p>
+</div>
+
+<div id="LPWU_wrapper" class="wrapper">
+<h2 id="LPWU">WARM UP (Yes, you can/should start!)</h2>
+<textarea id="LPWUTA" class="TA" rows="5" style="display: none;">&lt;span style="white-space: pre;"&gt;
+see HOW MUCH?
+&lt;/span&gt;
+</textarea>
+<p id="LPWUTA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Here is another classic puzzle that will sharpen your mind. 
+Let's suppose you need to measure out exactly 4 liters of water. 
+But, of course, you have a problem.
+
+You have two containers each 3 and 5 liters in volume respectively. 
+Each container has no other marking except for the fact that it only provides its known volume. 
+Using a running tap to fill them how would you measure out exactly 4 liters?
+</span>
+</p>
+</div>
+
+<div id="LPQ_wrapper" class="wrapper">
+<h2 id="LPQ">Questions???</h2>
+</div>
+
+<div id="LPG_wrapper" class="wrapper">
+<h2 id="LPG">GOALS FOR TODAY (and beyond) 🏀</h2>
+<textarea id="LPGTA" class="TA" rows="10" style="display: none;">&lt;span style="white-space: pre;"&gt;
+
+&lt;a&gt;https://www.youtube.com/watch?v=aQl4Xzbe0_w"&gt;Q&amp;A&lt;/a&gt;
+
+Again, today's goals are
+ 1) Continue looking at PROBLEM SOLVING!
+ 2) Introduce more SCRATCH features
+ 3) Introduce binary numbers
+&lt;/span&gt;
+</textarea>
+<p id="LPGTA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+
+<a href="https://www.youtube.com/watch?v=aQl4Xzbe0_w"&gt;check this</a>
+
+Again, today's goals are
+ 1) Make sure everyone feels welcomed to CSP.
+ 2) Make sure everyone is ready for CSP (devices, accounts, expectations).
+ 3) More about AP College Board CSP
+ 4) Define &amp; Discuss Problem Solving
+</span>
+</p>
+</div>
+
+<div id="LPN_wrapper" class="wrapper">
+<h2 id="LPN">NEW MATERIAL: EXPANDING OUR HORIZONS 🔭</h2>
+<textarea id="LPNTA" class="TA" rows="40" style="display: none;">&lt;span style="white-space: pre;"&gt;
+College Board &amp; CSP
+&lt;a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/course"&gt;Course Description&lt;/a&gt;
+&lt;strong&gt;What is Problem Solving?&lt;/strong&gt;
+&lt;embed class="embedded" type="text/html" src="viewPDF01.html" width="90%" height="150%" &gt;
+&lt;!--&lt;iframe src="https://frankkelly99.github.io/WhatIsProblemSolving.pdf" width="800" height="500"&gt;&lt;/iframe&gt;--&gt;
+&lt;strong&gt;The rope bridge at night problem		Source: Frerk Meyer/Flickr&lt;/strong&gt;
+This next puzzle is another head-scratcher. 
+Suppose there are four people trying to cross a rather dodgy rope bridge. 
+It is the middle of the night. Only two of them can cross it any one time. 
+They only have a single flashlight between them. 
+For this reason, one person of each pair must return to help the others get across.
+
+But time is limited; they are being chased and need to get across within 17 minutes total. 
+Sounds simple enough, except each person can only cross the bridge at a certain rate.
+
+One person takes 1 minute to cross the bridge. The second takes 2 minutes, 
+the third 5 and the last person 10 minutes.
+
+Each pair can only cross as fast as the slowest member of the pair. 
+How can they all cross the bridge in time?
+
+
+&lt;/span&gt;
+</textarea>
+<p id="LPNTA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+College Board &amp; CSP
+<a href="https://apcentral.collegeboard.org/courses/ap-computer-science-principles/course">Course Description</a>
+<strong>What is Problem Solving?</strong>
+
+<embed class="embedded" type="text/html" src="viewPDF01.html" width="90%" height="150%">
+<!--<iframe src="https://frankkelly99.github.io/WhatIsProblemSolving.pdf" width="800" height="500"></iframe>-->
+<strong>The rope bridge at night problem					Source: Frerk Meyer/Flickr</strong>
+This next puzzle is another head-scratcher. 
+Suppose there are four people trying to cross a rather dodgy rope bridge in the middle of the night.
+Only two of them can cross it any one time and they only have a single flashlight between them. 
+For this reason, one person of each pair must return to help the others get across.
+
+But time is limited; they are being chased and need to get across within 17 minutes total. 
+Sounds simple enough, except each person can only cross the bridge at a certain rate.
+
+One person takes 1 minute to cross the bridge. The second takes 2 minutes, 
+the third 5 and the last person 10 minutes.
+
+Each pair can only cross as fast as the slowest member of the pair. 
+How can they all cross the bridge in time?
+
+<strong>
+PROBLEM SOLVING &amp; COMPUTATIONAL THINKING!!!
+</strong>
+<iframe width="700" height="400" src="https://www.youtube.com/embed/-xFJM3QQ3TE" title="What is computer science?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<a href="https://www.youtube.com/watch?v=-xFJM3QQ3TE&amp;t=183s">Computers, Problems &amp; Impact</a>
+<strong>
+What is CS50AP?
+</strong>
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/ntMHdU35qlA" title="This is CS50 - Nepal" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<a href="https://www.csforall.org/members/harvard_cs50_ap/curriculum/harvards_cs50_ap">more info on CS50AP</a>
+
+<iframe width="700" height="400" src="https://www.youtube.com/embed/GAB6Gm7pTTA" title="What is CS50 AP?" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<a href="https://www.youtube.com/watch?v=aQl4Xzbe0_w">more about CS50</a>
+
+<a href="https://cs50.harvard.edu/ap/2023/">CS50AP Syllabus</a>
+</span>
+</p></div>
+
+<div id="LPA_wrapper" class="wrapper">
+<h2 id="LPA">Assessment </h2>
+<textarea id="LPATA" class="TA" rows="10" style="display: none;">&lt;span style="white-space: pre;"&gt;
+&lt;a href="https://scratch.mit.edu/"&gt;SCRATCH&lt;/a&gt;&lt;/span&gt;
+</textarea>
+<p id="LPATA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+<a href="https://scratch.mit.edu/">SCRATCH</a></span>
+</p>
+</div>
+
+<div id="LPHW_wrapper" class="wrapper">
+<h2 id="LPHW">HOMEWORK 😬</h2>
+<textarea id="LPHWTA" class="TA" rows="10" style="display: none;">&lt;span style="white-space: pre;"&gt;
+Please watch...
+
+&lt;/span&gt;
+</textarea>
+<p id="LPHWTA_P" class="TAP" style="background-color: rgb(255, 255, 255);"><span style="white-space: pre;">
+Please watch...
+
+</span>
+</p>
+</div>
+
+<div class="LPmisc">ANY QUESTIONS???</div>
+<div class="LPmisc">GOODBYE CS50@JHS <span class="wave">👋 </span></div>
+</div>
+<script>
+//document.querySelectorAll(".TA").forEach(a=>a.style.display = "initial");
+const firstDay = 240;
+let currentYear = 2022
+//alert(firstDay)
+
+		let myFileName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+		//alert(myFileName);
+
+		//alert(typeof(myFileName));
+		let noExt = myFileName.split(/[\s(.)%]+/);
+		//alert(noExt[0]);
+		//alert(typeof(noExt[0]));
+		//alert(noExt[-1]);
+		//alert(typeof(noExt[-1]));
+		
+//let doy = document.getElementById("myTitle").innerHTML;
+//alert(doy)
+let doy = noExt[0].substring(3,)
+//alert(doy)
+let dayOfYear = firstDay + parseInt(doy);
+//alert(dayOfYear)
+let initialDate = new Date(currentYear, 0); // initialized at first day of 2018
+let date = new Date(initialDate.setDate(dayOfYear)); // add your dayOfYear
+
+let NoTimeDate = (date.getMonth()+1)+'/'+ date.getDate() + '/' + date.getFullYear(); 
+
+document.getElementById("LPBDate").innerHTML = NoTimeDate;
+document.getElementById("DN").innerHTML = doy;
+
+function previewFile(doy) {
+
+	//alert("inside Preview")
+}
+
+//function showTA() {
+//  document.querySelectorAll(".TA").forEach(a=>a.style.display = "block");
+//  document.querySelectorAll("iframe").forEach(a=>a.style.display = "block");
+//}
+</script>
+<script>
+function myGeeks(n) {
+	//let n = 1;
+	//alert(n);
+	//alert(typeof(n));
+	
+    if (n == "btnEdit") {
+		//document.querySelectorAll("textarea").forEach(a=>a.style.display = "block");
+		//document.querySelectorAll("iframe").forEach(a=>a.style.display = "block");
+		document.getElementsByTagName("textarea").forEach(a=>a.style.display = "block");
+		document.getElementsByTagName("iframe").forEach(a=>a.style.display = "block");
+	}
+	else {
+		//document.querySelectorAll("textarea").forEach(a=>a.style.display = "none");
+		//document.querySelectorAll("iframe").forEach(a=>a.style.display = "none");
+		document.getElementsByTagName("textarea").forEach(a=>a.style.display = "none");
+		document.getElementsByTagName("iframe").forEach(a=>a.style.display = "none");
+	}
+	let new_TAC = ""
+	document.querySelectorAll(".TAP").forEach(a=>a.style.backgroundColor = "rgba(255, 255,255, 1.0)");
+	//alert("myGeets")
+		new_TAC = document.getElementById("LPJHSTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPJHSTA").innerHTML  = new_TAC;
+		document.getElementById("LPJHSTA_P").innerHTML = new_TAC;
+	
+		new_TAC = document.getElementById("LPOVTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPOVTA").innerHTML  = new_TAC;
+		document.getElementById("LPOVTA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPWUTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPWUTA").innerHTML  = new_TAC;
+		document.getElementById("LPWUTA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPOVTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPOVTA").innerHTML  = new_TAC;
+		document.getElementById("LPOVTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPGTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPGTA").innerHTML  = new_TAC;
+		document.getElementById("LPGTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPNTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPNTA").innerHTML  = new_TAC;
+		document.getElementById("LPNTA_P").innerHTML = new_TAC;
+		
+		new_TAC = document.getElementById("LPATA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPATA").innerHTML  = new_TAC;
+		document.getElementById("LPATA_P").innerHTML = new_TAC;
+
+		new_TAC = document.getElementById("LPHWTA").value
+			//= "Hello GeeksForGeeks . ";
+		document.getElementById("LPHWTA").innerHTML  = new_TAC;
+		document.getElementById("LPHWTA_P").innerHTML = new_TAC;
+				
+	saveFile();
+}
+</script>
+<script>
+    let saveFile = () => {
+//	if (n == 0) {
+//
+//	}
+    	alert("WE R HERE")
+        // Get the data from each element on the form.
+		//const day_num = 321;
+		//const fullPage = document.getElementById("root").value;
+		
+		let x = document.getElementById('root').parentElement.outerHTML			
+		//let myFileName = location.href.split("/").slice(-1); 
+
+//		let myFileName = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+
+        //let ov = document.getElementById("LPOVTA").value;
+		//alert(ov);
+ 
+        // This variable stores all the data.
+        let data = x;
+
+        // Convert the text to BLOB.
+        const textToBLOB = new Blob([data], { type: 'text/plain' });
+		const sFileName = noExt[0] + '.html'; 
+		//+ noExt[1];
+		
+				alert(sFileName);
+        let newLink = document.createElement("a");
+        newLink.download = sFileName;
+
+        if (window.webkitURL != null) {
+            newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+        }
+        else {
+            newLink.href = window.URL.createObjectURL(textToBLOB);
+            newLink.style.display = "none";
+            document.body.appendChild(newLink);
+        }
+        newLink.click(); 
+    }
+</script>
+<script>
+function test() {
+	//document.querySelectorAll("textarea").forEach(a=>a.style.display = "none");
+	//document.querySelectorAll("iframe").forEach(a=>a.style.display = "none");
+	
+	document.getElementsByTagName("textarea").forEach(a=>a.style.display = "none");
+	document.getElementsByTagName("iframe").forEach(a=>a.style.display = "none");
+	var mt = document.getElementById('myTitle').value;
+	var element = document.getElementById('root');
+	var mtfile = mt + ".pdf"
+	// Generate the PDF.
+	html2pdf().from(element).set({
+	margin:       [1, 0, 0, 0], 
+    filename: mtfile,
+  	pageBreak: { mode: 'css', before:'#nextpage1'},
+    jsPDF: {orientation: 'landscape', unit: 'in', format: 'letter'}
+	}).toPdf().get('pdf').then(function (pdf) {
+    var totalPages = pdf.internal.getNumberOfPages();
+
+    for (i = 1; i <= totalPages; i++) {
+    	pdf.setPage(i);
+      pdf.setFontSize(10);
+      pdf.setTextColor(150);
+    pdf.text('Page ' + i + ' of ' + totalPages, (pdf.internal.pageSize.getWidth()/2.25), (pdf.internal.pageSize.getHeight()-8)); 
+      }
+  }).save();
+}
+</script>
+</body></html>
