@@ -1,0 +1,589 @@
+<html>
+<head>
+<style>
+body { height: auto;
+
+}
+div {height: auto}
+
+.collapsible {
+  display: block;
+  background-color: rgba(255,0,0,0.8);
+  color: white;
+  cursor: pointer;
+  padding: 5px 5px 5px 20px;
+  width: 90%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: auto;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+#courseTitle { 
+   background-color: rgba(255,0,0,1);
+   text-align: center;
+   font-size: 30px;
+   color: white;
+   font-weight: bold;
+  }
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
+<style type="text/css">
+
+#show-pdf-button {
+	width: 150px;
+	display: block;
+	margin: 20px auto;
+}
+
+#file-to-upload {
+	display: none;
+}
+
+#pdf-main-container {
+	width: 400px;
+	margin: 20px auto;
+}
+
+#pdf-loader {
+	display: none;
+	text-align: center;
+	color: #999999;
+	font-size: 13px;
+	line-height: 100px;
+	height: 100px;
+}
+
+#pdf-contents {
+	display: none;
+}
+
+#pdf-meta {
+	overflow: hidden;
+	margin: 0 0 20px 0;
+}
+
+#pdf-buttons {
+	float: left;
+}
+
+#page-count-container {
+	float: right;
+}
+
+#pdf-current-page {
+	display: inline;
+}
+
+#pdf-total-pages {
+	display: inline;
+}
+
+#pdf-canvas {
+	border: 1px solid rgba(0,0,0,0.2);
+	box-sizing: border-box;
+}
+
+#page-loader {
+	height: 100px;
+	line-height: 100px;
+	text-align: center;
+	display: none;
+	color: #999999;
+	font-size: 13px;
+}
+
+</style>
+</head>
+<body>
+<a id="a1" href="https://www.nasa.gov/" target="_blank">NASA</a>
+<div class="mypage" style="background-color: black; color: white;">
+<div class="grid-container" style="display: grid; grid-template-columns: auto auto auto auto auto auto auto auto; background-color: #90,20,30; padding: 10px;">
+<div class="grid-item" style="background-color: rgba(255, 0,0, 1.0); border: 1px solid rgba(0, 0, 0, 0.8); padding: 5px; font-size: 20px; text-align: left;">
+<h2 data-id="cs50-ap">CS50AP@JHS</h2>
+<p>2022-2023<br /><a style="color: white;" href="mailto:fkelly@dpsnc.net">Frank Kelly</a></p>
+<nav class="collapse d-md-block"><hr />
+<ul style="list-style-type: none; margin: 0; padding: 0;">
+<li><a href="https://code.cs50.io/">VSCode for CS50</a></li>
+<li><a href="https://submit.cs50.io" target="_blank" rel="noopener">Submit50 - check your work</a></li>
+</ul>
+<hr /><details>
+<summary>Q1</summary>
+<ul>
+<li><a href="https://github.com/frankkelly99/CS50AP/blob/main/README.md">Welcome &amp; Intro</a></li>
+<li><a href="https://github.com/frankkelly99/CS50AP/blob/main/README.md">Prelim 0</a></li>
+<li><a href="https://github.com/frankkelly99/CS50AP/blob/main/README.md">Week 0</a></li>
+</ul>
+</details><details>
+<summary>Q2</summary>
+<ul style="list-style-type: none; margin: 0; padding: 0;">
+<li><a href="https://github.com/frankkelly99/CS50AP/blob/main/README.md">Welcome &amp; Intro</a></li>
+</ul>
+</details>
+<ul style="list-style-type: none; margin: 0; padding: 0;">
+<li><a style="color: white;" href="https://github.com/frankkelly99/CS50AP/blob/main/CS50AP_test0.html">CS50AP@JHS_gitHUB</a></li>
+<li><a style="color: white;" href="https://man.cs50.io/">CS50 Programmer&rsquo;s Manual</a></li>
+<li><a style="color: white;" href="https://cs50.readthedocs.io/">CS50 Documents &amp; Tools</a></li>
+<li><a style="color: white;" href="https://cs50.readthedocs.io/style/c/" target="_blank" rel="noopener">C Style Guide</a></li>
+<li><a style="color: white;" href="https://cs50.statuspage.io/" target="_blank" rel="noopener">Status Page</a></li>
+<li><a style="color: white;" href="https://cs50.harvard.edu/ap/2023/" target="_blank" rel="noopener">CS50AP 22-23 Harvard</a></li>
+</ul>
+</nav></div>
+<div class="grid-item" style="background-color: white; color: green; border: 1px solid rgba(0, 0, 0, 0.8); padding: 5px; font-size: 30px; text-align: center; grid-column-start: 2; grid-column-end: 9;">
+
+
+<div id="myBody">
+
+<h1 id="courseTitle">CS50@JHS</h1>
+</div>
+</div>
+</div>
+</div>
+<script>
+let holidays = {8:"Labor Day",75:"Veterans Day",87:"Holiday",88:"Thanksgiving Day",89:"Holiday"}
+//
+/*
+		s	m			t			w			r			f
+28-Aug		intro		intro/ps	ps/cs50		scratch		scratch
+4-Sep		scratch/hw	scratch/hw	vs code		scratch/git	scratch/git
+11-Sep		c			c			c/hw		c			c/hw
+18-Sep		c			c			c			c			c
+25-Sep		c			c			ER			c			c
+2-Oct		html/css	html/css	html/css	html/css	html/css
+9-Oct		html/css	html/css	html/css	html/css	html/css
+16-Oct		javascript	javascript	javascript	javascript	javascript
+23-Oct		javascript	javascript	javascript	javascript	EQ1
+30-Oct		TWD			python		python		python		python
+6-Nov		python		TWD			python		python		python
+13-Nov		python		python		python		python		python
+20-Nov		python		python			
+27-Nov		Data & SQL	Data & SQL	Data & SQL	Data & SQL	Data & SQL
+4-Dec		python		python		python		python		python
+11-Dec		python		python		python		python		python
+18-Dec		impact				
+25-Dec						
+1-Jan		eoc/task	eoc/task	eoc/task
+8-Jan	 	eoc/task	eoc/task	eoc/task	eoc/task	EQ2
+*/
+//const unit_weeks = [2,2,3,4,2,1,4,2]
+let Topics = {"Unit0":"Getting Started & Intro to SCRATCH",
+			"Unit1":"INTERNET & WWW",
+			"Unit2":"PROGRAMMING with C",
+			"Unit3":"PROGRAMMING with PYTHON",
+			"Unit4":"DATA SCIENCE",
+			"Unit5":"SQL",
+			"Unit6":"THE GOOD, THE BAD, & THE UGLY",
+			"Unit7":"WRAPPING UP,PROJECTS,REVIEW,EXAMS",
+			"Week1":"01/18/22-01/21/22 Overview,INTROS & Expectations",
+			"Week2":"01/22/22-01/28/22 COMPUTER PROGRAMMING & SCRATCH",
+			"Week3":"01/29/22-02/04/22 A Brief Look at the INTERNET & WWW",
+			"Week4":"02/05/22-02/11/22 Basic Web Pages",
+			"Week5":"02/12/22-02/18/22 INTRO TO C",
+			"Week6":"02/19/22-02/25/22 INTRO TO C",
+			"Week7":"02/26/22-03/04/22 ARRAYS & ALGORITHMS",
+			"Week8":"03/05/22-03/11/22 INTRO TO PYTHON",
+			"Week9":"03/12/22-03/18/22 INTRO TO PYTHON",
+			"Week10":"03/19/22-03/25/22 MORE PYTHON",
+			"Week11":"03/26/22-04/01/22 FLASK & PYTHON",
+			"Week12":"04/02/22-04/08/22 PYTHON & DATA SCIENCE",
+			"Week13":"04/09/22-04/15/22 DATA ANALYSIS & VISUALIZATION",
+			"Week14":"04/16/22-04/22/22 SQL",
+			"Week15":"04/23/22-04/29/22 SECURITY,PRIVACY,ETHICS",
+			"Week16":"04/30/22-05/06/22 INTRO TO AI & PYTHON",
+			"Week17":"12/18/22-12/24/22 ALMOST A FULL BREAK",
+			"Week18":"12/28/22-12/31/22 FINALLY A FULL BREAK",
+			"Week19":"01/01/23-01/07/23 AP TASKS,PROJECTS & REVIEW",
+			"Week20":"01/08/23-01/14/23 AP TASKS,PROJECTS & EOC",
+			"Day0":"SUNDAY",
+			"Day1":"Welcome to CS50@JHS",
+			"Day2":"KEY CONCEPTS",
+			"Day3":"Hardware & Software",
+			"Day4":"Introduction to SCRATCH",
+			"Day5":"Some More SCRATCH",
+			"Day6":"SATURDAY",
+			"Day7":"SUNDAY",
+			"Day8":"LABOR DAY",
+			"Day9":"Functions",
+			"Day10":"VSCODE",
+			"Day11":"Concept Quiz",
+			"Day12":"LOGIC",
+			"Day15":"HTML & CSS",
+			"Day16":"HTML & CSS",
+			"Day17":"HTML & CSS",	 
+			"Day18":"CSS BOX MODEL",	
+			"Day19":"CSS",	
+			"Day22":"Finish Web Site",
+			"Day23":"Intro to C",
+			"Day24":"HTML/CSS/WWW Quiz",
+			"Day25":"Intro to C",
+			"Day26":"CS50AP LAB 1 (Intro)",
+			"Day29":"CS50AP LAB 1 (population.c)",
+			"Day30":"CS50AP LAB 1 (population.c)",
+			"Day31":"CS50AP (half.c)",
+			"Day32":"CS50AP (mario)",	 
+			"Day33":"CS50AP Review",
+			"Day34":"CS50AP No School",	
+			"Day36":"CS50AP Compiling",	
+			"Day37":"CS50AP Functions in C",
+			"Day39":"CS50AP SCRABBLE",	
+			"Day40":"CS50AP Arrays & Strings",	
+			"Day41":"CS50AP (half.c)",
+			"Day42":"CS50AP (mario)",	 
+			"Day43":"CS50AP Algorithms/Big O()",
+			"Day44":"CS50AP Bubble Sort",	
+			"Day45":"CS50AP Sorting/LAB 3",	
+			"Day46":"CS50AP Sorting/LAB 3",
+			"Day47":"CS50AP SCRABBLE",	
+			"Day50":"CS50AP SORTING & RECURSION",	
+			"Day51":"CS50AP POINTERS",
+	      		"Day78":"HOW TO PROGRAM",
+	      		"Day79":"Python",
+	      		"Day80":"Python",
+	      		"Day81":"Python",
+	      		"Day82":"Python",
+	      		"Day83":"Python",
+	      		"Day84":"Python",
+	      		"Day85":"Python",
+	      		"Day92":"Intro Matplotlib",
+			"Week":"TBD",
+			"Day":"TBD"			
+}
+
+function makeElements(type,unit_num,week_num,doy,myInfo) {
+
+//alert("Calling ME");
+
+let ElementID = ""
+let ParentID = ""
+let TopicID = ""
+///////////////////////////////////
+
+	if (type == "intro"){
+		ElementID = "myIntro"
+		ParentID = "myBody"
+		TopicID = ElementID
+	} else if (type == "unit") {
+	// remove -1
+		ElementID = "Unit" + (unit_num).toString()
+		ParentID = "myBody"
+		TopicID = ElementID
+	} else if (type == "week") {
+		ElementID = "Week" + week_num.toString()
+	// remove -1
+		ParentID = "Unit" + (unit_num).toString() + "_content"
+		TopicID = ElementID		
+	} else {
+		ElementID = "Day" + doy.toString()
+		//alert(ElementID + " full"); //day
+		ParentID = "Week" + week_num.toString() + "_content"
+
+		if (Topics.hasOwnProperty(ElementID)) {
+			//Topics[ElementID] = "Today's BIG Lesson"
+			TopicID = ElementID
+		} else {
+			//alert("WE ARE IN HERE!")
+			TopicID = "Day"
+		}	
+	}
+//
+	if (type != "day"){
+		const myElement = document.createElement("div");
+		myElement.setAttribute("id",ElementID);	
+		myElement.setAttribute("class","collapsible");
+		document.getElementById(ParentID).appendChild(myElement);
+		// Complete the Button Displayed Text
+		let Topic = Topics[TopicID]
+		document.getElementById(ElementID).innerHTML = "  " + ElementID + " " + Topic;
+		
+		const myContent = document.createElement("div");
+		let contentID = ElementID + "_content"
+		myContent.setAttribute("id",contentID);	
+		myContent.setAttribute("class","content");
+		document.getElementById(ParentID).appendChild(myContent);
+	}
+//
+
+	if (type == "day"){
+		//alert(ElementID)	
+
+		//const myElement = document.createElement("button");
+		const myElement = document.createElement("a");
+		myElement.setAttribute("id",ElementID);
+
+		//alert(ElementID)
+		//let dd = ElementID.substring(3, 6);
+		//alert(typeof dd)  .formPopup
+		myElement.setAttribute("class","collapsible");
+		document.getElementById(ParentID).appendChild(myElement);
+		myElement.setAttribute("onclick","previewFile(this.id)");
+		//
+		let Topic = Topics[TopicID]
+		document.getElementById(ElementID).innerHTML = "  " + ElementID + " " + Topic;
+	}
+}
+/////////////////////////////
+function preRender(dayID) {
+	alert(dayID)
+//	let active_days = {active_days}
+	
+	if (Object.hasOwn(active_days,dayID)){
+		active_days[dayID] = active_days[dayID] * -1
+	} else {
+		active_days[dayID] = 1;
+	}
+	if (active_days[dayID] == 1) {
+		alert("inside Preview")
+	}
+}
+///////////////////////////
+
+////////////////////
+/*
+// 08/28/2022 to 01/13/2023
+// unit 0 (intro) : 2 	08/28
+// unit 1 (web): 1 		09/11
+// unit 2 (c): 3 		09/18
+// unit 3 (py): 4		10/09
+// unit 4 Data : 3		11/06
+// unit 5 SQL : 1		11/27
+// unit 6 more py : 4	12/04
+// unit 7 review/EOC: 2	01/01
+*/
+
+//const unit_weeks = [1,2,1,3,4,3,1,4,2]
+//const unit_weeks = [2,3,3,4,3,1,4,2]
+const unit_weeks =   [2,2,4,4,2,1,3,2]
+//[2,3,3,3,2,1,4,2]
+const total_weeks = 20 //including Xmas break
+let sw = 1 //start week 08/28/2022
+let week_counter = 0;
+
+
+for (let un = 0; un < 8; un++){
+	//alert(un);
+
+		makeElements("unit", un,0,0,"");
+		//alert(unit_weeks[un])
+	
+		for (let wn = sw;wn < sw + (unit_weeks[un]); wn++) {
+			//alert(sw)
+			week_counter = wn;
+			makeElements("week", un,wn,0,"");
+			
+			for (let dx = 0; dx < 7; dx++) {
+				let doyS = ((wn -1) * 7 + dx).toString();
+				makeElements("day",un,wn,doyS,"something more interesting to say");
+			}
+		}
+		sw = week_counter + 1;
+}
+//
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+	let tempID = coll[i].getAttribute("id");
+	//document.getElementById("pp1").innerHTML = tempID;
+	//document.getElementById("pp2").innerHTML = coll[i].scrollHeight;
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content2 = this.nextElementSibling;
+    if (content2.style.maxHeight){
+      content2.style.maxHeight = null;
+    } else {
+	  let myDivHeight = document.getElementById(tempID + "_content").scrollHeight;
+	  //document.getElementById("pp3").innerHTML = myDivHeight;
+      content2.style.maxHeight = content2.scrollHeight + myDivHeight + "px";
+    } 
+  });
+}
+//
+
+</script>
+
+<script>
+let active_days = {}
+//let doy = 234
+function upLoadFile(n){
+ alert(n)
+}
+function previewFile(dayID) {
+	const num_days = 100;
+	
+	//alert(dayID)
+	let dn = dayID.substring(3,);
+	//alert(dn)
+	let dnp = parseInt(dn);
+	//alert(dnp)	
+	
+	let DayPlans =[]
+	for (let i = 0; i < num_days; i++) {
+		//initDP = "day" + i;
+		DayPlans[i] = "./notYet.html";
+	}
+
+	let pageAddress = "./dayPage_Default01.html"
+	// Lesson Plan Status
+	
+	// REPLACE WITH LOOP!!!
+	
+		DayPlans[1] = "./day1.html";
+		DayPlans[2] = "./day2.html";
+		DayPlans[3] = "./day3.html";
+		DayPlans[4] = "./day4.html";
+		DayPlans[5] = "./day5.html";
+		DayPlans[6] = "./notYet.html";
+		DayPlans[7] = "./notYet.html";
+		DayPlans[8] = "./notYet.html";
+		DayPlans[9] = "./day9.html";
+		DayPlans[10] = "./day10.html";
+		DayPlans[11] = "./day11.html";
+		DayPlans[12] = "./day12.html";
+		DayPlans[13] = "./day13.html";
+		DayPlans[14] = "./day14.html";
+		DayPlans[15] = "./day15.html";
+		DayPlans[16] = "./day16.html";		
+		DayPlans[17] = "./day17.html";
+		DayPlans[18] = "./day18.html";
+		DayPlans[19] = "./day19.html";
+		DayPlans[20] = "./day20.html";
+		DayPlans[21] = "./day21.html";
+		DayPlans[22] = "./day22.html";
+		DayPlans[23] = "./day23.html";
+		DayPlans[24] = "./day24.html";
+		DayPlans[25] = "./day25.html";
+		DayPlans[26] = "./day26.html";
+		DayPlans[27] = "./day27.html";
+		DayPlans[28] = "./day28.html";
+		DayPlans[29] = "./day29.html";
+		DayPlans[30] = "./day30.html";
+		DayPlans[31] = "./day31.html";
+		DayPlans[32] = "./day32.html";
+		DayPlans[33] = "./day33.html";
+		DayPlans[34] = "./notYet.html";
+		DayPlans[35] = "./notYet.html";
+		DayPlans[36] = "./day36.html";
+		DayPlans[37] = "./day37.html";
+		DayPlans[38] = "./day38.html";
+		DayPlans[39] = "./day39.html";
+		DayPlans[40] = "./day40.html";
+		DayPlans[41] = "./notYet.html";
+		DayPlans[42] = "./notYet.html";
+		DayPlans[43] = "./day43.html";
+		DayPlans[44] = "./day44.html";
+		DayPlans[45] = "./day45.html";
+		DayPlans[46] = "./day46.html";
+		DayPlans[47] = "./day47.html";
+		DayPlans[48] = "./day48.html";
+		DayPlans[49] = "./day49.html";	
+		DayPlans[50] = "./day50.html";	
+		DayPlans[51] = "./day51.html";	
+		DayPlans[52] = "./notYet.html";
+		DayPlans[53] = "./day53.html";
+		DayPlans[54] = "./day54.html";
+		DayPlans[55] = "./day55.html";
+		DayPlans[56] = "./day56.html";
+		DayPlans[57] = "./day57.html";
+		DayPlans[58] = "./day58.html";
+		DayPlans[59] = "./day59.html";	
+		DayPlans[60] = "./day60.html";	
+		DayPlans[61] = "./day61.html";	
+		DayPlans[62] = "./notYet.html";
+		DayPlans[63] = "./notYet.html";
+		DayPlans[64] = "./day64.html";
+		DayPlans[65] = "./day65.html";
+		DayPlans[66] = "./day66.html";
+		DayPlans[67] = "./day67.html";
+		DayPlans[68] = "./day68.html";
+		DayPlans[69] = "./notYet.html";	
+		DayPlans[70] = "./notYet.html";	
+		DayPlans[71] = "./day71.html";
+		DayPlans[72] = "./notYet.html";
+		DayPlans[73] = "./day73.html";
+		DayPlans[74] = "./day74.html";
+		DayPlans[75] = "./notYet.html";
+		DayPlans[76] = "./notYet.html";
+		DayPlans[77] = "./notYet.html";
+		DayPlans[78] = "./day78.html";
+		DayPlans[85] = "./day85.html";
+		DayPlans[86] = "./day86.html";
+		DayPlans[92] = "./day92.html";
+		DayPlans[93] =  "./notYet.html";
+		//DayPlans[1] = "frankkelly99.github.io/day1.html";
+		//DayPlans[2] = "frankkelly99.github.io/day2.html";
+	
+	if ((dnp % 7) == 0) {
+		alert("Sunday! No School!")
+		DayPlans[dnp] = "";
+	}
+	else if (((dnp + 1) % 7) == 0) {
+		alert("Saturday! No School!")
+		DayPlans[dnp] = "";	
+    }
+    else if (dnp in holidays) {
+		alert(holidays[dnp])
+	} else {
+		pageAddress = "dayPage_Default01.html"
+		
+//	let active_days = {active_days}
+	
+	if (Object.hasOwn(active_days,dayID)){
+		if (active_days[dayID] == 1) {
+		alert("inside Preview") 
+		active_days[dayID] = active_days[dayID] * -1
+		}
+	} else {
+		active_days[dayID] = 1;
+	}
+	if (active_days[dayID] == 1) {
+		let myLink = document.getElementById("a1")
+	
+		//myLink.setAttribute("href", "./dayPage_Default01.html");
+		myLink.setAttribute("href", DayPlans[dnp]);
+		//<a href="default.asp">HTML tutorial</a>
+		//document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
+		document.getElementById('a1').click();
+	}
+   }
+}
+</script>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
