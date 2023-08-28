@@ -1,0 +1,202 @@
+<html><head>
+<style>
+body   {background-color: red;
+        width: 100%;
+        }
+
+.myButtons {display: block;
+        cursor: pointer;
+        width: 90%;
+        padding-left: auto;
+        padding-right: auto;
+        }
+.item1 { grid-area: units;
+        border: 10px solid black;
+         width: 98%;
+       }
+.item2 { grid-area: lessonPlans;
+         border: 10px solid black;
+         width: 98%;
+       }
+@media print {
+        .LP {
+          page-break-inside: avoid;
+        }
+      }
+.LP    { border-style: solid;
+         border: 5px solid black;
+         cursor: pointer;
+         padding: 10px;
+         width: 96%;
+         text-align: left;
+         outline: none;
+         font-size: 40px;
+         margin: 10px;
+}
+.LPDetails {
+          background-color: white;
+          color: black;
+          margin: 5px;
+          padding: 20px;
+          text-align: left;
+          font-size: 20px;
+}
+
+ol {
+  background: #ff9999;
+  padding: 2px;
+  margin: 0;
+}
+
+ul {
+  background: #3399ff;
+  padding: 2px;
+  margin: 0;
+}
+
+ol li {
+  background: #ffe5e5;
+  color: darkred;
+  padding: 20 0 0 0;
+  margin 0;;
+}
+
+ul li {
+  background: #cce5ff;
+  color: darkblue;
+  margin: 0;
+}
+li{
+  margin: 0;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'units'
+    'lessonPlans';
+  gap: 10px;
+  color: white;
+  background-color: red;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 0, 0, 0.8);
+  text-align: center;
+  padding: 2px 0;
+  font-size: 30px;
+}
+.unit {
+  background-color: rgba(255,255,255,1.0);
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: 5px solid black;
+  text-align: left;
+  outline: none;
+  font-size: 30px;
+}
+
+.active, .collapsible:hover {
+  background-color: pink;
+}
+
+.content {
+  color: black;
+  padding: 0 10px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+.hide {
+  display: block;
+}
+
+.all::before {
+  content: 'Hide ';
+}
+
+.all.active::before {
+  content: 'Show ';
+}
+.banner { font-size: 50px;
+          color:     white;
+          text-align: center;
+          background-color: red;
+}
+#std { font-size: 50px;
+          color:     white;
+          text-align: center;
+          background-color: red;
+          text-decoration: underline;
+          text-decoration-color: blue;
+          border: none;
+}
+iframe {
+          width: 90%;
+          height: 800;
+          margin: 10px;
+          padding: 10px
+}
+</style>
+</head>
+<body onload='goToToday(240)'><h1 class='banner'>JORDAN HIGH SCHOOL</h1><h1 class='banner'>MATH II S1 2023-24</h1><center><button id='std' class='banner collapsible active myButtons'>NC STANDARDS MATH II</button><div class='content'><iframe src='https://files.nc.gov/dpi/documents/curriculum/mathematics/scos/current/math-2.pdf'></iframe></div><button class='all active' type='button'>All</button><button onclick="printFunction()">Print PDF</button></center><div class="grid-container">
+  <div class="item1"><h2>MATH II UNITS</h2>
+  <a href='https://drive.google.com/file/d/1IBNQCpSE8GIjyDOWDMCeI2IzuhadH3ZZ-YG7mzW-Gd8/view'>OVERVIEW</a><button class='unit collapsible active' style='page-break-before: always'>UNIT0: Getting Started</button><div class='content'><a href='https://docs.google.com/document/d/17M3wlcukWjcZyQYxdM9KiDWxk2KGdg5P5XfCg-5fQyg/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>see Math Practice Stds SMP 1-8</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT1: Rigid Transformations & Congruence</button><div class='content'><a href='https://docs.google.com/document/d/1gVxveEY_KPiVvq_evKlOKzbVpx-BXuyVcLimDAmscbU/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.G-CO.2, NC.M2.G-CO.3,  NC.M2.G-CO.4, NC.M2.G-CO.5, NC.M2.G-CO.6, NC.M2.G-CO.7,  NC.M2.G-CO.8</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT2: Triangles</button><div class='content'><a href='https://docs.google.com/document/d/15dq5uvqiDX-EPc1sB431M0bnPPbJL4wzAbAaQyOJaf0/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.G-CO.9, NC.M2.G-CO.10</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT3: Dilations & Similarity</button><div class='content'><a href='https://docs.google.com/document/d/1xglr631jEOL1ffLGwI_wHMrZQrtWcvZpqGdEB1M4ypk/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.F-IF.1, NC.M2.F-IF.2, NC.M2.G-CO.2, NC.M2.G-SRT.1, NC.M2.G-SRT.2, NC.M2.G-SRT.3</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT4: Trigonometry</button><div class='content'><a href='https://docs.google.com/document/d/18DSOqx2otgW649zjMVJTyyXQpwS3As5Yty3_KC3CWjI/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.G-SRT.4, NC.M2.G-SRT.6, NC.M2.G-SRT.8, NC.M2.G-SRT.12, NC.M2.A-SSE.1a, NC.M2.A-CED.1</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT5: Probability</button><div class='content'><a href='https://docs.google.com/document/d/1uC05rkvnUehlgCJCGccXWMmKFze-6kO-FRdv6a0u6N0/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.S-IC.2, NC.M2.S-CP.1, NC.M2.S-CP.3a-b,NC.M2.S-CP.4-8</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT6: Functions & Quadratics</button><div class='content'><a href='https://docs.google.com/document/d/15h49F2TfLbsm9Ti_JhATYWU9Y-xC1CPJtIucqif3GPI/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.F-IF.1-2, NC.M2.F-IF.4, NC.M2.F-IF.7-9, NC.M2.N-CN.1, NC.M2.A-SSE.1a-b, NC.M2.A-SSE.3, NC.M2.A-APR.1, NC.M2.A-CED.1-3, NC.M2.A-REI.1, NC.M2.A-REI.4a-b,NC.M2.A-REI.7,NC.M2.F-BF.1-3</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT7: ROOTS & INVERSES</button><div class='content'><a href='https://docs.google.com/document/d/11xS_VJAeRJQ0xHUhbnHAalnItVXfmIl9l-yROWONCtM/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.N-RN.1-3, NC.M2.A-SSE.1a-b, NC.M2.A-CED.1-3,NC.M2.A-REI.1-2, NC.M2.A-REI.11, NC.M2.F-IF.4, NC.M2.F-IF.7, NC.M2.F-IF.9,NC.M2.F-BF.3</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT8: REVIEW</button><div class='content'><a href='https://drive.google.com/file/d/1IBNQCpSE8GIjyDOWDMCeI2IzuhadH3ZZ-YG7mzW-Gd8/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>review all Math II</li></ul></div></div><br><br><div>RESOURCES:<br><a href='https://www.khanacademy.org/' target='_blank'>Khan Academy</a><br><a href='https://www.desmos.com/' target='_blank'>Desmos</a><br><br><h3>END OF RESOURCES</h3></div><div class="item2"><div><h2>LESSONS: TODAY IS Monday 08/28/23</h2></div><button class='LP collapsible active' style='page-break-before: always' id='240'>Monday 08-28-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1geiO-X8uR0qSrHhSt4y5LIqFUl9MoAKz/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='241'>Tuesday 08-29-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1UnGMSOpaYy4nGEDqyy3KhIU6WIYDaDRT/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='242'>Wednesday 08-30-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/19nKk2U_RzF6f1U6tYcnwTIACBKVxkmAu/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='243'>Thursday 08-31-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/15kLbvAKYe49dECGHBCekjjs7uhwHzwup/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='244'>Friday 09-01-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1Y2iXfvQw4Fc2J58yDEO_FGKGgdAVkvwm/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='245'>Saturday 09-02-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='246'>Sunday 09-03-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='247'>Monday 09-04-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='248'>Tuesday 09-05-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1Kzow08XTUO17bLtZ3kw38WjnLK4GH4kx/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='249'>Wednesday 09-06-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/14CoYqg6uSfC44gApJqK1JPlIPEfvxdCR/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='250'>Thursday 09-07-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1LH6c299DyhtQGzNEwwcr5q9JWOvDIFC0/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='251'>Friday 09-08-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1XtOk8ueMAYFqHFgMWO5Rz5BDsI_7WGii/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='252'>Saturday 09-09-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='253'>Sunday 09-10-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='254'>Monday 09-11-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-X4KKrsyEGMVTyKLjCUX1JbzadHxmj6m/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='255'>Tuesday 09-12-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-WjYo8VTSQR5UZPWbgl4pBvLy1FD1wPd/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='256'>Wednesday 09-13-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-WHjMJLN-IFMkTZe369JAAIJUXlTd-9B/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='257'>Thursday 09-14-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-Vsom5rE-hVFrHMteHnMoAjoRnEqDWJ1/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='258'>Friday 09-15-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-Vi8wmSw5u2b-FcFgWw-VFHyhtBrOWkq/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='259'>Saturday 09-16-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='260'>Sunday 09-17-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='261'>Monday 09-18-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-S5IO0gE43QkMZrAP30BMbLrTsP7V4fM/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='262'>Tuesday 09-19-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-NkG8OWBwPDvnXUzqHPZW5wmxgTG3mS2/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='263'>Wednesday 09-20-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-N5xQZlAOXBVd8RT9QJdjdqzjMoooSxG/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='264'>Thursday 09-21-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-LweWf405RkBC8Mf302jNzn4Y56YIr3P/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='265'>Friday 09-22-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-HYhLl_MtD-oR8FPjMYiF28_YE7KgHat/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='266'>Saturday 09-23-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='267'>Sunday 09-24-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='268'>Monday 09-25-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='269'>Tuesday 09-26-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-DoCi5wJPKcpTTIG2ILvFh8DM7CYAKij/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='270'>Wednesday 09-27-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-C9s9ZUBVkDss6VyEJqwseSArB_rSdxc/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='271'>Thursday 09-28-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-6qjYBcELpK1gjPDuTft2Mls9IQ-PTrl/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='272'>Friday 09-29-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1--JxJ6oXnF30tYEvO5O1e8b3VNIiNxBw/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='273'>Saturday 09-30-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='274'>Sunday 10-01-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='275'>Monday 10-02-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-jVt2BBYabZ3X8xM_LAREUJVJFYwxdDU/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='276'>Tuesday 10-03-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-jEJYbjsriSx3HdxMWcp0PmZsc9t3ivt/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='277'>Wednesday 10-04-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-ixXq5bnC-lv6EGl5WAEHGanjXz5H1bE/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='278'>Thursday 10-05-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-i1qWrM6M2j3p2haSmu6knA4-MaNIHsY/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='279'>Friday 10-06-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-euGXC84QO_yymXbnBK0ot_CXLFUIUww/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='280'>Saturday 10-07-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='281'>Sunday 10-08-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='282'>Monday 10-09-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-bcmtAfhauHs5kddHcV4_eyGOV3IFUk9/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='283'>Tuesday 10-10-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-ZDM-CPGH5Lj5G_yqlhLEKv0KSsID49R/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='284'>Wednesday 10-11-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-Yu3TSfIUurW6bXQ-uPpWAr8IE9SdT6G/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='285'>Thursday 10-12-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-YE652tmkLYoXQD6iV6gsnnRD7KgHUT4/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='286'>Friday 10-13-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10ciPs3rLScCLnZ6BtF3gNB3eQ8F28pVJ/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='287'>Saturday 10-14-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='288'>Sunday 10-15-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='289'>Monday 10-16-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10a8omMskjx7dvaRFjWq6bDs9hX9TQQlD/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='290'>Tuesday 10-17-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10URjiIwjy70OW-mOr9RUizrA86wofqCo/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='291'>Wednesday 10-18-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10PS3zaJSv0iS0dAWwhjs9msw0izFPEr5/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='292'>Thursday 10-19-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10MpEkcX4jxM7re1o74HO-gmTtGlZ4ham/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='293'>Friday 10-20-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10HUuzG8efiH3d9WuBe9oqMb-ex13gFJO/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='294'>Saturday 10-21-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='295'>Sunday 10-22-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='296'>Monday 10-23-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10Fcwpni05JvmCb7r6SVS80m0GgURx8u6/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='297'>Tuesday 10-24-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10F7WaFu-7PbrqY1mKylvjlRatLpzxfK1/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='298'>Wednesday 10-25-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10DhCpEcgbtQk9FXQusa71G0fUj-BTvh-/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='299'>Thursday 10-26-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10823oZaXSxvFXedCzGsXhgz_WNV5JyoS/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='300'>Friday 10-27-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/107O3KgWPHSVoGrUF8WITmmeVOZcfUuaf/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='301'>Saturday 10-28-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='302'>Sunday 10-29-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='303'>Monday 10-30-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/101zg96zlxKOXqwY4vWHuJJJYjankJiZx/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='304'>Tuesday 10-31-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-zZBOzGmTRMD3pZe8pI1U4Yf1w8n55Rh/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='305'>Wednesday 11-01-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='306'>Thursday 11-02-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-pzzeSG7HfiHvhOBLvUxRNZ582zGgaWo/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='307'>Friday 11-03-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/1-nanaIC5YGn1PxdFmN2nw2Ajb9MoYtcS/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='308'>Saturday 11-04-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='309'>Sunday 11-05-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='310'>Monday 11-06-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11_21nBV_WfiBZGvueOnSy-v8jDbm5nUe/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='311'>Tuesday 11-07-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='312'>Wednesday 11-08-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11WKydyfAeyk9a8Nob6REnU9UbSE-PYaM/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='313'>Thursday 11-09-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11UY3gbagENHCXoTiHKUD1UcHaPiY0LT0/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='314'>Friday 11-10-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='315'>Saturday 11-11-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='316'>Sunday 11-12-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='317'>Monday 11-13-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11MWxptgbpZohkvmvXjhnMNerZZyu8uoz/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='318'>Tuesday 11-14-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11KaJX4YrsoAWw94IcPnjs_K4oDEvvGv2/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='319'>Wednesday 11-15-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11ElfXM-dwqsxu-Z-63kYcTTWAHgETAOp/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='320'>Thursday 11-16-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11DZ5FZjSvkBOEkwWniLl-0sA7xgg5ynB/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='321'>Friday 11-17-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11BEc10shzu8Ls-vv-YvxsYkE4kW0ff2Z/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='322'>Saturday 11-18-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='323'>Sunday 11-19-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='324'>Monday 11-20-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/115VC5bO1pdwsMr5eO8DKLPrASDklgeRS/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='325'>Tuesday 11-21-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/111_Dy5K9bunQJo6WOg1-vUo86pXioftX/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='326'>Wednesday 11-22-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='327'>Thursday 11-23-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='328'>Friday 11-24-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='329'>Saturday 11-25-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='330'>Sunday 11-26-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='331'>Monday 11-27-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10zfgPxSQLTNEvSizbU2utE1MLaBJgWIU/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='332'>Tuesday 11-28-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10svaIDvkZW085yOhkxkvI2VUlgD3eYW0/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='333'>Wednesday 11-29-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10r4ar5JnyhMhb0pEg-fzhi_CYhtFwZ1e/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='334'>Thursday 11-30-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10hPpw7k_nV5TRRyg8JtImoVPI5rSE4u4/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='335'>Friday 12-01-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/10cxyMRTzq_s03PCfPy5rTU6YShCN09Xh/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='336'>Saturday 12-02-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='337'>Sunday 12-03-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='338'>Monday 12-04-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/12TvDo0eUCHhGGeHdbNTaGmy3Z2lv_bFn/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='339'>Tuesday 12-05-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/12Sa-TJAJWUPYXG_4Qg3-H_btq5u3D8jE/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='340'>Wednesday 12-06-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/12MkiUGkcSZh55p5Ygw2x8z5v3SVvvz9A/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='341'>Thursday 12-07-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/12BjZr0PPR_mL6AdPxJ2rBV2PaNAmJahw/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='342'>Friday 12-08-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/128zJpPgP27lmpswLz4L9QHuq5QNKk8TN/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='343'>Saturday 12-09-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='344'>Sunday 12-10-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='345'>Monday 12-11-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11ySDcofcnR2aHVvmku6J_MN1q-bfZXrJ/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='346'>Tuesday 12-12-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11sAUkXWU-1SIEEOOSQM96QjtWD_6wBI_/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='347'>Wednesday 12-13-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11ntyMfums-t2UdlgCzI9U9UbLuaptYxA/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='348'>Thursday 12-14-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11nsqRhebPMTgbBk-wncVYpkNm2xzR89L/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='349'>Friday 12-15-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11l06m-o_CoUmxDYac6V8a7jlHtluxeCK/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='350'>Saturday 12-16-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='351'>Sunday 12-17-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='352'>Monday 12-18-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11kyxX7GxcZktjIeJSyybtuKjVIvT1B5M/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='353'>Tuesday 12-19-2023</button><div class='LPDetails content'><iframe src='https://docs.google.com/document/d/11k8VpZkd90dKD1s_6Mfr4qM-xBIenD71/edit?usp=sharing'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='354'>Wednesday 12-20-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='355'>Thursday 12-21-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='356'>Friday 12-22-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='357'>Saturday 12-23-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='358'>Sunday 12-24-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='359'>Monday 12-25-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='360'>Tuesday 12-26-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='361'>Wednesday 12-27-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='362'>Thursday 12-28-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='363'>Friday 12-29-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='364'>Saturday 12-30-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='365'>Sunday 12-31-2023</button><div class='message'><strong>Have a nice weekend</strong></div></div><br>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+function goToToday(dayOfYear) {
+  document.getElementById('xxx').click();
+}
+const col = document.querySelectorAll(".collapsible");
+
+for (let c of col) {
+  c.addEventListener("click", collapse);
+}
+
+function collapse(e) {
+  this.classList.toggle("active");
+  const content = this.nextElementSibling;
+  content.classList.toggle('hide');
+}
+
+const all = document.querySelector(".all");
+
+all.addEventListener('click', collapseAll);
+
+function collapseAll(e) {
+  const col = document.querySelectorAll('.collapsible');
+  const con = document.querySelectorAll('.content');
+
+  if (e.target.matches('.all')) {
+    this.classList.toggle("active");
+
+    col.forEach((button, index) => {
+      if (e.target.matches('.active')) {
+        button.classList.add('active');
+        con[index].classList.remove('hide');
+      } else {
+        button.classList.remove('active');
+        con[index].classList.add('hide');
+      }
+    });
+  }
+}
+function printFunction() {
+        window.print();
+}
+</script><a id="xxx" href="#240"></a><br /></body></html>
