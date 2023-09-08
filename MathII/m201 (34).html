@@ -1,0 +1,202 @@
+<html><head>
+<style>
+body   {background-color: red;
+        width: 100%;
+        }
+
+.myButtons {display: block;
+        cursor: pointer;
+        width: 90%;
+        padding-left: auto;
+        padding-right: auto;
+        }
+.item1 { grid-area: units;
+        border: 10px solid black;
+         width: 98%;
+       }
+.item2 { grid-area: lessonPlans;
+         border: 10px solid black;
+         width: 98%;
+       }
+@media print {
+        .LP {
+          page-break-inside: avoid;
+        }
+      }
+.LP    { border-style: solid;
+         border: 5px solid black;
+         cursor: pointer;
+         padding: 10px;
+         width: 96%;
+         text-align: left;
+         outline: none;
+         font-size: 40px;
+         margin: 10px;
+}
+.LPDetails {
+          background-color: white;
+          color: black;
+          margin: 5px;
+          padding: 20px;
+          text-align: left;
+          font-size: 20px;
+}
+
+ol {
+  background: #ff9999;
+  padding: 2px;
+  margin: 0;
+}
+
+ul {
+  background: #3399ff;
+  padding: 2px;
+  margin: 0;
+}
+
+ol li {
+  background: #ffe5e5;
+  color: darkred;
+  padding: 20 0 0 0;
+  margin 0;;
+}
+
+ul li {
+  background: #cce5ff;
+  color: darkblue;
+  margin: 0;
+}
+li{
+  margin: 0;
+}
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'units'
+    'lessonPlans';
+  gap: 10px;
+  color: white;
+  background-color: red;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 0, 0, 0.8);
+  text-align: center;
+  padding: 2px 0;
+  font-size: 30px;
+}
+.unit {
+  background-color: rgba(255,255,255,1.0);
+  color: black;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: 5px solid black;
+  text-align: left;
+  outline: none;
+  font-size: 30px;
+}
+
+.active, .collapsible:hover {
+  background-color: pink;
+}
+
+.content {
+  color: black;
+  padding: 0 10px;
+  display: none;
+  overflow: hidden;
+  background-color: white;
+}
+.hide {
+  display: block;
+}
+
+.all::before {
+  content: 'Hide ';
+}
+
+.all.active::before {
+  content: 'Show ';
+}
+.banner { font-size: 50px;
+          color:     white;
+          text-align: center;
+          background-color: red;
+}
+#std { font-size: 50px;
+          color:     white;
+          text-align: center;
+          background-color: red;
+          text-decoration: underline;
+          text-decoration-color: blue;
+          border: none;
+}
+iframe {
+          width: 90%;
+          height: 800;
+          margin: 10px;
+          padding: 10px
+}
+</style>
+</head>
+<body onload='goToToday(249)'><h1 class='banner'>JORDAN HIGH SCHOOL</h1><h1 class='banner'>MATH II S1 2023-24</h1><center><button id='std' class='banner collapsible active myButtons'>NC STANDARDS MATH II</button><div class='content'><iframe src='https://files.nc.gov/dpi/documents/curriculum/mathematics/scos/current/math-2.pdf'></iframe></div><button class='all active' type='button'>All</button><button onclick="printFunction()">Print PDF</button></center><div class="grid-container">
+  <div class="item1"><h2>MATH II UNITS</h2>
+  <a href='https://drive.google.com/file/d/1IBNQCpSE8GIjyDOWDMCeI2IzuhadH3ZZ-YG7mzW-Gd8/view'>OVERVIEW</a><button class='unit collapsible active' style='page-break-before: always'>UNIT0: Getting Started</button><div class='content'><a href='https://docs.google.com/document/d/17M3wlcukWjcZyQYxdM9KiDWxk2KGdg5P5XfCg-5fQyg/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>see Math Practice Stds SMP 1-8</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT1: Rigid Transformations & Congruence</button><div class='content'><a href='https://docs.google.com/document/d/1gVxveEY_KPiVvq_evKlOKzbVpx-BXuyVcLimDAmscbU/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.G-CO.2, NC.M2.G-CO.3,  NC.M2.G-CO.4, NC.M2.G-CO.5, NC.M2.G-CO.6, NC.M2.G-CO.7,  NC.M2.G-CO.8</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT2: Triangles</button><div class='content'><a href='https://docs.google.com/document/d/15dq5uvqiDX-EPc1sB431M0bnPPbJL4wzAbAaQyOJaf0/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.G-CO.9, NC.M2.G-CO.10</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT3: Dilations & Similarity</button><div class='content'><a href='https://docs.google.com/document/d/1xglr631jEOL1ffLGwI_wHMrZQrtWcvZpqGdEB1M4ypk/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.F-IF.1, NC.M2.F-IF.2, NC.M2.G-CO.2, NC.M2.G-SRT.1, NC.M2.G-SRT.2, NC.M2.G-SRT.3</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT4: Trigonometry</button><div class='content'><a href='https://docs.google.com/document/d/18DSOqx2otgW649zjMVJTyyXQpwS3As5Yty3_KC3CWjI/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.G-SRT.4, NC.M2.G-SRT.6, NC.M2.G-SRT.8, NC.M2.G-SRT.12, NC.M2.A-SSE.1a, NC.M2.A-CED.1</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT5: Probability</button><div class='content'><a href='https://docs.google.com/document/d/1uC05rkvnUehlgCJCGccXWMmKFze-6kO-FRdv6a0u6N0/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.S-IC.2, NC.M2.S-CP.1, NC.M2.S-CP.3a-b,NC.M2.S-CP.4-8</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT6: Functions & Quadratics</button><div class='content'><a href='https://docs.google.com/document/d/15h49F2TfLbsm9Ti_JhATYWU9Y-xC1CPJtIucqif3GPI/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.F-IF.1-2, NC.M2.F-IF.4, NC.M2.F-IF.7-9, NC.M2.N-CN.1, NC.M2.A-SSE.1a-b, NC.M2.A-SSE.3, NC.M2.A-APR.1, NC.M2.A-CED.1-3, NC.M2.A-REI.1, NC.M2.A-REI.4a-b,NC.M2.A-REI.7,NC.M2.F-BF.1-3</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT7: ROOTS & INVERSES</button><div class='content'><a href='https://docs.google.com/document/d/11xS_VJAeRJQ0xHUhbnHAalnItVXfmIl9l-yROWONCtM/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>NC.M2.N-RN.1-3, NC.M2.A-SSE.1a-b, NC.M2.A-CED.1-3,NC.M2.A-REI.1-2, NC.M2.A-REI.11, NC.M2.F-IF.4, NC.M2.F-IF.7, NC.M2.F-IF.9,NC.M2.F-BF.3</li></ul></div><button class='unit collapsible active' style='page-break-before: always'>UNIT8: REVIEW</button><div class='content'><a href='https://drive.google.com/file/d/1IBNQCpSE8GIjyDOWDMCeI2IzuhadH3ZZ-YG7mzW-Gd8/view'>DPI/REVEAL UNIT MATERIAL</a><ul><li>review all Math II</li></ul></div></div><br><br><div>RESOURCES:<br><a href='https://www.khanacademy.org/' target='_blank'>Khan Academy</a><br><a href='https://www.desmos.com/' target='_blank'>Desmos</a><br><br><h3>END OF RESOURCES</h3></div><div class="item2"><div><h2>LESSONS: TODAY IS Friday 09/08/23</h2></div><button class='LP collapsible active' style='page-break-before: always' id='240'>Monday 08-28-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day1.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='241'>Tuesday 08-29-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day2.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='242'>Wednesday 08-30-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day3.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='243'>Thursday 08-31-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day4.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='244'>Friday 09-01-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day5.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='245'>Saturday 09-02-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='246'>Sunday 09-03-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='247'>Monday 09-04-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='248'>Tuesday 09-05-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day6.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='249'>Wednesday 09-06-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day7.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='250'>Thursday 09-07-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day8.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='251'>Friday 09-08-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day9.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='252'>Saturday 09-09-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='253'>Sunday 09-10-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='254'>Monday 09-11-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='255'>Tuesday 09-12-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='256'>Wednesday 09-13-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='257'>Thursday 09-14-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='258'>Friday 09-15-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='259'>Saturday 09-16-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='260'>Sunday 09-17-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='261'>Monday 09-18-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='262'>Tuesday 09-19-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='263'>Wednesday 09-20-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='264'>Thursday 09-21-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='265'>Friday 09-22-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='266'>Saturday 09-23-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='267'>Sunday 09-24-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='268'>Monday 09-25-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='269'>Tuesday 09-26-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='270'>Wednesday 09-27-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='271'>Thursday 09-28-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='272'>Friday 09-29-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='273'>Saturday 09-30-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='274'>Sunday 10-01-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='275'>Monday 10-02-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='276'>Tuesday 10-03-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='277'>Wednesday 10-04-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='278'>Thursday 10-05-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='279'>Friday 10-06-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='280'>Saturday 10-07-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='281'>Sunday 10-08-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='282'>Monday 10-09-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='283'>Tuesday 10-10-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='284'>Wednesday 10-11-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='285'>Thursday 10-12-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='286'>Friday 10-13-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='287'>Saturday 10-14-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='288'>Sunday 10-15-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='289'>Monday 10-16-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='290'>Tuesday 10-17-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='291'>Wednesday 10-18-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='292'>Thursday 10-19-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='293'>Friday 10-20-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='294'>Saturday 10-21-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='295'>Sunday 10-22-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='296'>Monday 10-23-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='297'>Tuesday 10-24-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='298'>Wednesday 10-25-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='299'>Thursday 10-26-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='300'>Friday 10-27-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='301'>Saturday 10-28-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='302'>Sunday 10-29-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='303'>Monday 10-30-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='304'>Tuesday 10-31-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='305'>Wednesday 11-01-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='306'>Thursday 11-02-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='307'>Friday 11-03-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='308'>Saturday 11-04-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='309'>Sunday 11-05-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='310'>Monday 11-06-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='311'>Tuesday 11-07-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='312'>Wednesday 11-08-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='313'>Thursday 11-09-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='314'>Friday 11-10-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='315'>Saturday 11-11-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='316'>Sunday 11-12-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='317'>Monday 11-13-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='318'>Tuesday 11-14-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='319'>Wednesday 11-15-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='320'>Thursday 11-16-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='321'>Friday 11-17-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='322'>Saturday 11-18-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='323'>Sunday 11-19-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='324'>Monday 11-20-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='325'>Tuesday 11-21-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='326'>Wednesday 11-22-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='327'>Thursday 11-23-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='328'>Friday 11-24-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='329'>Saturday 11-25-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='330'>Sunday 11-26-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='331'>Monday 11-27-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='332'>Tuesday 11-28-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='333'>Wednesday 11-29-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='334'>Thursday 11-30-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='335'>Friday 12-01-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='336'>Saturday 12-02-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='337'>Sunday 12-03-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='338'>Monday 12-04-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='339'>Tuesday 12-05-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='340'>Wednesday 12-06-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='341'>Thursday 12-07-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='342'>Friday 12-08-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='343'>Saturday 12-09-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='344'>Sunday 12-10-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='345'>Monday 12-11-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='346'>Tuesday 12-12-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='347'>Wednesday 12-13-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='348'>Thursday 12-14-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='349'>Friday 12-15-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='350'>Saturday 12-16-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='351'>Sunday 12-17-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='352'>Monday 12-18-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='353'>Tuesday 12-19-2023</button><div class='LPDetails content'><iframe src='https://frankkelly99.github.io/MathII/day_template.pdf'></iframe></div><button class='LP collapsible active' style='page-break-before: always' id='354'>Wednesday 12-20-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='355'>Thursday 12-21-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='356'>Friday 12-22-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='357'>Saturday 12-23-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='358'>Sunday 12-24-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='359'>Monday 12-25-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='360'>Tuesday 12-26-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='361'>Wednesday 12-27-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='362'>Thursday 12-28-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='363'>Friday 12-29-2023</button><div class='message'><strong>NO SCHOOL TODAY!!!</strong></div><button class='LP collapsible active' style='page-break-before: always' id='364'>Saturday 12-30-2023</button><div class='message'><strong>Have a nice weekend</strong></div><button class='LP collapsible active' style='page-break-before: always' id='365'>Sunday 12-31-2023</button><div class='message'><strong>Have a nice weekend</strong></div></div><a id="xxx" href="#249"></a><br /><br>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+function goToToday(dayOfYear) {
+  document.getElementById('xxx').click();
+}
+const col = document.querySelectorAll(".collapsible");
+
+for (let c of col) {
+  c.addEventListener("click", collapse);
+}
+
+function collapse(e) {
+  this.classList.toggle("active");
+  const content = this.nextElementSibling;
+  content.classList.toggle('hide');
+}
+
+const all = document.querySelector(".all");
+
+all.addEventListener('click', collapseAll);
+
+function collapseAll(e) {
+  const col = document.querySelectorAll('.collapsible');
+  const con = document.querySelectorAll('.content');
+
+  if (e.target.matches('.all')) {
+    this.classList.toggle("active");
+
+    col.forEach((button, index) => {
+      if (e.target.matches('.active')) {
+        button.classList.add('active');
+        con[index].classList.remove('hide');
+      } else {
+        button.classList.remove('active');
+        con[index].classList.add('hide');
+      }
+    });
+  }
+}
+function printFunction() {
+        window.print();
+}
+</script></body></html>
